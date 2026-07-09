@@ -563,6 +563,25 @@ def responder(intencao, slots, dados, sessao=None, mensagem=""):
                     f"ou sobre {b}?"
                 )
 
+    # ── cores_basicas COM cor citada: confirma a cor primeiro (grounding) ──
+    # "queria uma roupa rosa" caía na lista genérica de 12 cores onde "rosa"
+    # era a última palavra — o cliente não sentia que foi ouvido. Aqui, se a
+    # cor pedida veio no turno, a resposta abre confirmando e convida a
+    # escolher a peça (as 12 cores do estoque cobrem todas as do extractor).
+    if intencao == "cores_basicas" and (slots or {}).get("cor"):
+        _NOME_COR = {
+            "royal": "azul royal", "marinho": "azul marinho",
+            "cinza_mescla": "cinza mescla", "cinza_chumbo": "cinza chumbo",
+            "verde_militar": "verde militar", "verde_bandeira": "verde bandeira",
+        }
+        cor_pedida = slots["cor"]
+        cor_nome = _NOME_COR.get(cor_pedida, cor_pedida.replace("_", " "))
+        return (
+            f"Temos {cor_nome} sim, em pronta entrega! Qual peça você procura "
+            f"nessa cor? Fazemos camisetas, polos, moletons, calças, vestidos e "
+            f"uniformes — é só me dizer que eu te passo os detalhes."
+        )
+
     if intencao == "manut_amaciante":
         return (
             "Melhor evitar amaciante, principalmente em moletom, dry fit e peças com estampa. "

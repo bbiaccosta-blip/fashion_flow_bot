@@ -566,7 +566,7 @@ compat_pers_tecido,da pra bordar viscose,combinado_personalizacao_em_tecido,OK,,
 compat_pers_tecido,silk em algodao funciona,combinado_personalizacao_em_tecido,OK,,Sim! Combinação clássica - melhor relação custo-benefício
 compat_pers_tecido,posso estampar no linho,personalizacao,MISMATCH,"esperava compat_pers_tecido, classificou 'personalizacao'","Trabalhamos com bordado, silkscreen, DTF, etiqueta personalizada e modelagem exclusiva. A melhor técnica depende da arte, tecido, quantidade e prazo. Se quiser, posso listar as opções."
 compat_cor_tecido,tem algodao vermelho,combinado_cor_em_tecido,OK,,A cor vermelho em algodao basico está em estoque permanente.
-compat_cor_tecido,moletom preto disponivel,cores_basicas,OK,,"Mantemos 12 cores em estoque permanente: branco, preto, cinza mescla, cinza chumbo, azul marinho, azul royal, vermelho, vinho, verde militar, verde bandeira, amarelo e rosa. Pronta entrega, sem prazo adicional."
+compat_cor_tecido,moletom preto disponivel,cores_basicas,OK,,"Temos preto sim, em pronta entrega! Qual peça você procura nessa cor? Fazemos camisetas, polos, moletons, calças, vestidos e uniformes — é só me dizer que eu te passo os detalhes."
 compat_cor_tecido,viscose rosa tem,combinado_cor_em_tecido,OK,,A cor rosa em viscose está em estoque permanente.
 compat_cor_tecido,algodao na cor marinho,combinado_cor_em_tecido,OK,,A cor marinho em algodao basico está em estoque permanente.
 compat_cor_tecido,quais cores em algodao,combinado_cores_disponiveis_para_tecido,OK,,"Para algodao basico, as cores em estoque permanente são: amarelo, branco, cinza chumbo, cinza mescla, marinho, preto, rosa, royal, verde bandeira, verde militar, vermelho, vinho."
