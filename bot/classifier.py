@@ -854,6 +854,21 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
     if melhor_kw:
         return melhor_kw
 
+    # ── 8b. "roupa(s)" GENÉRICO → catálogo ────────────────────────
+    # A palavra mais natural do cliente ("quero uma roupa", "vendem roupas?",
+    # "queria uma roupa rosa") não existia no vocabulário: não é produto do
+    # extractor, nenhuma keyword genérica casa (só compostos tipo "roupa boa"),
+    # e o fuzzy pescava intenção aleatória ("roupa" → qualidade_durabilidade).
+    # Fica DEPOIS da etapa de keywords de propósito: "roupa de frio"→sug_inverno,
+    # "roupa infantil"→cat_infantil, "roupa de trabalho"→sug_trabalho já saíram
+    # lá; aqui só chega roupa genérica. Com cor citada, responde as cores em
+    # estoque (ex: "roupa rosa" → confirma que tem rosa e pergunta a peça).
+    if re.search(r'\broupas?\b|\bvestuario\b|\blooks?\b|\bpecas? de roupa\b', t) \
+       and not re.search(r'cuid|lav|conserv|encolh|desbot|passar|ferro|secadora|manch', t):
+        if slots_turno.get("cor"):
+            return "cores_basicas"
+        return "catalogo"
+
     # ── 9. Similaridade textual (rapidfuzz), desempate por peso ───
     melhor_score = 0
     melhor_peso = -1.0
@@ -933,6 +948,10 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
         return _CAT_POR_PRODUTO[foco_produto]
     if slots_efetivos.get("tecido"):
         return "tecidos"
+    # Só uma COR citada, sem produto ("quero algo rosa") → mostra as cores em
+    # estoque, que confirma a cor pedida e convida a escolher a peça.
+    if slots_turno.get("cor"):
+        return "cores_basicas"
 
     # ── 11. CLARIFICAÇÃO por ambiguidade (two-stage confidence gating) ──
     # Se nenhuma regra específica pegou E o score do top-1 é baixo E os top-2
