@@ -169,7 +169,11 @@ def _escolha_curta_topico(texto):
 
 
 def _numero_solto(texto):
-    m = re.fullmatch(r'\s*(?:e\s+)?(?:(?:se\s+)?(?:for|forem|fosse|fossem)\s+)?(?:pra|para)?\s*(\d+)\s*\??\s*', texto)
+    # Aceita: "100", "e 100?", "e se for 50", "pra 300", "de 20", "tbm de 20"
+    # (tbm→tambem via normalizar). Prefixos comuns de refinamento de orçamento.
+    m = re.fullmatch(
+        r'\s*(?:e\s+)?(?:tambem\s+)?(?:(?:se\s+)?(?:for|forem|fosse|fossem)\s+)?'
+        r'(?:pra|para|de)?\s*(\d+)\s*\??\s*', texto)
     return int(m.group(1)) if m else None
 
 def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
@@ -193,7 +197,9 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
     # Sozinhas, viravam intenções aleatórias no fuzzy ("menu" casava com
     # "meu pedido", "voltar" com "dinheiro de volta"). Aqui a gente força
     # elas caírem na saudação, que já lista os tópicos que o bot cobre.
-    if re.fullmatch(r'\s*(menu|ajuda|help|opcao|opcoes|voltar|inicio|comecar)\s*[.!?]*', t):
+    # "opa" saiu das keywords do CSV (disparava saudação no MEIO de frases tipo
+    # "opa espera, minha socia quer verde"); aqui só conta quando é a mensagem toda.
+    if re.fullmatch(r'\s*(menu|ajuda|help|opcao|opcoes|voltar|inicio|comecar|opa)\s*[.!?]*', t):
         return "saudacao"
 
     topico_curto = _escolha_curta_topico(t)
@@ -451,13 +457,15 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
     # fechar: "posso combinar bordado com silk?", "cor por cor pode variar?",
     # "500 pretas ou 250/250?", "posso misturar tamanhos?". Sem intenção
     # dedicada, essas caíam no catálogo do produto — inútil pra negociação.
+    _CORES_NEG = r'pret\w*|branc\w*|azul|verde|vermelh\w*|amarel\w*|rosa|cinza|marinho|royal|vinho'
     if re.search(r'\bpode(?:m)?\s+(?:combinar|misturar|variar|mesclar)\b|'
                  r'\bposso\s+(?:combinar|misturar|variar|mesclar)\b|'
                  r'\bda pra combinar\b|\bcombinar\s+(bordad|silk|dtf|estamp)|'
                  r'\bmisturar\s+(cor|tamanhos?|modelos?|produtos?)|'
                  r'\bvariar?\s+(cor|tamanhos?)|'
                  r'\bmix (de |em )?(cor|tamanhos?)|'
-                 r'\b(\d+)\s+(pret\w*|branc\w*|azul|verde|vermelh\w*|amarel\w*)\s+(?:e|,|ou)\s+(\d+)\s+(pret\w*|branc\w*|azul|verde|vermelh\w*|amarel\w*)', t):
+                 # "500 pretas e 250 brancas" / "50 rosa 50 verde" (separador opcional)
+                 rf'\b(\d+)\s+({_CORES_NEG})\s*(?:e|,|ou)?\s*(\d+)\s+({_CORES_NEG})', t):
         return "negociacao_pedido"
 
     # ── Perguntas GRANULARES dentro de tópico ─────────
@@ -539,10 +547,12 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
     if not re.search(r'\bsaber\b|\bver\b|\bconhec\w+|\bsobre\b|informac|d[uú]vida|'
                      r'\bquais\b|\bqual\b|\bcomo\b|\bquanto\b|\bpreco\b|\bpreço\b|'
                      r'\bdesconto\b|\bprazo\b|\btempo\b|\bcor(es)?\b|\btamanhos?\b', t):
+        # "vamos fechar" cobre o "bora fechar" pós-normalização (bora→vamos).
         frase_pedido = re.search(
             r'\bvou querer\b|\bvou levar\b|\bvou fechar\b|\bpode fechar\b|'
             r'\bpode registrar\b|\bregistrar esse pedido\b|\bfechar (o )?pedido\b|'
-            r'\bencomend\w+|\bquero (fazer|fechar)\b|\bbora fechar\b', t)
+            r'\bencomend\w+|\bquero (fazer|fechar)\b|\bbora fechar\b|'
+            r'\bvamos fechar\b|\bfechado\b|\bfecha ai\b', t)
         if frase_pedido:
             return "registrar_pedido"
 
@@ -657,6 +667,14 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
         "prazo_com_personalizacao": "combinado_prazo_personalizacao_produto",
         "prazo_urgente": "combinado_prazo_qtd_produto",
         "setor_vendas": "combinado_preco_qtd_produto",
+        # Número solto logo após o CATÁLOGO de um produto = "quanto custa N?"
+        # ("moletom tem?" → catálogo → "de 20" → orçamento de 20 moletons).
+        "cat_camisetas": "combinado_preco_qtd_produto",
+        "cat_moletons": "combinado_preco_qtd_produto",
+        "cat_calcas": "combinado_preco_qtd_produto",
+        "cat_vestidos": "combinado_preco_qtd_produto",
+        "cat_uniformes": "combinado_preco_qtd_produto",
+        "produto_detalhe": "combinado_preco_qtd_produto",
     }
     if sessao and sessao.get("ultimo_assunto") in ULTIMO_ORCAMENTO:
         qtd_solta = _numero_solto(t)
@@ -943,15 +961,15 @@ def classificar(mensagem, slots_turno, slots_efetivos, intencoes, sessao=None):
     # produto antes), cair no catálogo dele em vez de "não entendi" genérico.
     # Efeito prático: cliente diz "e X?" fora de padrão conhecido — em vez de
     # fallback, ele recebe algo útil sobre o que já estava conversando.
+    # COR citada NESTE turno vence produto herdado ("e rosa?" depois de falar
+    # de camiseta é pergunta sobre a COR, não pedido do catálogo de novo).
+    if slots_turno.get("cor"):
+        return "cores_basicas"
     foco_produto = slots_efetivos.get("produto")
     if foco_produto in _CAT_POR_PRODUTO:
         return _CAT_POR_PRODUTO[foco_produto]
     if slots_efetivos.get("tecido"):
         return "tecidos"
-    # Só uma COR citada, sem produto ("quero algo rosa") → mostra as cores em
-    # estoque, que confirma a cor pedida e convida a escolher a peça.
-    if slots_turno.get("cor"):
-        return "cores_basicas"
 
     # ── 11. CLARIFICAÇÃO por ambiguidade (two-stage confidence gating) ──
     # Se nenhuma regra específica pegou E o score do top-1 é baixo E os top-2

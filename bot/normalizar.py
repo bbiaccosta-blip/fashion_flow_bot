@@ -50,7 +50,9 @@ TYPOS_FONETICOS = {
     # Gírias de fechamento (importante pra "bora fechar", "fecha ai")
     r"fecha ai": "fechar pedido",
 }
-_RE_TYPOS = [(re.compile(rf"\b{p}\b"), v) for p, v in TYPOS_FONETICOS.items()]
+# (?:...) agrupa a alternância: sem isso, "\btb|tbm\b" aplicaria o \b só na
+# primeira/última alternativa e "tbm" virava "tambemm" (casava \btb e sobrava o m).
+_RE_TYPOS = [(re.compile(rf"\b(?:{p})\b"), v) for p, v in TYPOS_FONETICOS.items()]
 
 
 def normalizar(texto):

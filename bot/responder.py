@@ -1370,10 +1370,16 @@ def responder(intencao, slots, dados, sessao=None, mensagem=""):
         r = filtro.iloc[0]
         total = round(float(r["preco_unitario_estimado"]) * quantidade, 2)
         pers_txt = f" com {personalizacao}" if personalizacao != "nenhuma" else ""
+        # O CSV traz "sem desconto" ou "5% desconto" — normaliza pra não sair
+        # "(sem desconto de desconto)" no texto final.
+        desc_raw = str(r["desconto_aplicado"]).strip()
+        desc_limpo = re.sub(r'\s*(de\s+)?desconto\s*$', '', desc_raw, flags=re.I).strip()
+        desc_txt = "sem desconto" if desc_limpo.lower().startswith("sem") or not desc_limpo \
+                   else f"{desc_limpo} de desconto"
         return (
             f"Para {quantidade} {pecas(quantidade)} de {produto.replace('_',' ')}{pers_txt}: "
             f"valor unitário estimado de R$ {r['preco_unitario_estimado']} "
-            f"({r['desconto_aplicado']} de desconto). "
+            f"({desc_txt}). "
             f"Total estimado: R$ {total:.2f}. "
             "Valor indicativo — fechamento com vendas."
         )
