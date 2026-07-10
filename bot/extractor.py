@@ -8,7 +8,8 @@ REGRAS DE OURO:
   quantidade (evita o Crítico 3: número do menu virar quantidade).
 """
 import re
-import unicodedata
+
+from bot.normalizar import normalizar
 
 
 # ── Unidades que podem acompanhar uma quantidade ───────────────────
@@ -25,6 +26,13 @@ UNIDADES_QTD = (
 # Ordem importa: chaves mais específicas vêm primeiro pra não serem
 # engolidas por chaves curtas (ex: "camiseta premium" antes de "camiseta").
 PRODUTOS = [
+    # "camisa(s)/camiseta(s) premium" e "premiun" (typo) = a camiseta premium.
+    # Vêm PRIMEIRO pra vencer o "camisas" genérico no empate de posição (senão
+    # "camisas premium" caía em camiseta_basica e perdia o detalhe da premium).
+    ("camisetas? premium", "camiseta_premium"),
+    ("camisas? premium", "camiseta_premium"),
+    ("camisetas? premiun", "camiseta_premium"),
+    ("camisas? premiun", "camiseta_premium"),
     # mais específicos primeiro
     ("camiseta premium", "camiseta_premium"),
     ("camiseta basica", "camiseta_basica"),
@@ -53,6 +61,9 @@ PRODUTOS = [
     ("uniformes?", "uniforme_polo"),
     ("jalecos?", "uniforme_jaleco"),
     ("oversized", "oversized"),
+    ("premium", "camiseta_premium"),   # "premium" sozinho = a camiseta premium
+    ("premiun", "camiseta_premium"),   # typos comuns
+    ("premim", "camiseta_premium"),
 ]
 
 # ── Personalizações ────────────────────────────────────────────────
@@ -116,14 +127,6 @@ USOS = [
     ("formal", "formal"),
     ("meia estacao", "meia_estacao"),
 ]
-
-
-def normalizar(texto):
-    """Remove acentos e converte para minúsculas."""
-    texto = texto.lower()
-    texto = unicodedata.normalize("NFD", texto)
-    texto = "".join(c for c in texto if unicodedata.category(c) != "Mn")
-    return texto
 
 
 def _primeiro_match(padroes, texto):
@@ -230,9 +233,9 @@ def extrair_slots(mensagem, em_menu=False):
     if valor:
         slots["tecido"] = valor
 
-    # ── Passo 7: cor ─────────────────────────────────────────────
+    # ── Passo 7: cor (aceita plural: "pretas", "brancos", "vermelhos") ──
     for chave, valor in CORES:
-        if re.search(rf"\b{chave}\b", t):
+        if re.search(rf"\b{chave}s?\b", t):
             slots["cor"] = valor
             break
 

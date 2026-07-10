@@ -1,0 +1,10 @@
+# Render Blueprint — deploy do Fashion Flow Bot (API FastAPI).
+# Como usar: render.com -> New + -> Blueprint -> conecte este repo -> Apply.
+# O Render lê este arquivo e configura o build e o start sozinho.
+services:
+  - type: web
+    name: fashion-flow-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn app:app --host 0.0.0.0 --port $PORT

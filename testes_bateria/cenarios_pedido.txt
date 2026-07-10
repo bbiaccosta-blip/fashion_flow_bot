@@ -1,0 +1,1077 @@
+
+======================================================================
+CENARIO 01 — 2 produtos, finaliza com nao
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ana
+  🤖 [(nome)] Prazer, Ana! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisetas
+  🤖 [registrar_pedido] Ana, Boa, anotei: 100x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Ana, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Ana, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Ana, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ana, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 sim, 50 polos
+  🤖 [registrar_pedido] Ana, Boa, anotei: 50x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Ana, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Ana, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Ana, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 bordado
+  🤖 [registrar_pedido] Ana, Anotei o item 2: 50x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ana, Pedido registrado! Número FF-2026-0006, com 2 itens: 1) 100x camiseta basica preto; 2) 50x polo branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 02 — 3 produtos
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bia
+  🤖 [(nome)] Prazer, Bia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 50 camisetas pretas
+  🤖 [registrar_pedido] Bia, Boa, anotei: 50x camiseta basica, preto. Vou registrar seu pedido — só faltam alguns dados. Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Bia, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Bia, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Bia, Anotei o item 1: 50x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 mais 30 moletons
+  🤖 [registrar_pedido] Bia, Boa, anotei: 30x moletom. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cinza
+  🤖 [registrar_pedido] Bia, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Bia, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 moletom flanelado
+  🤖 [registrar_pedido] Bia, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 silk
+  🤖 [registrar_pedido] Bia, Anotei o item 2: 30x moletom cinza mescla. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 e 20 regatas
+  🤖 [registrar_pedido] Bia, Boa, anotei: 20x regata. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Bia, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 P
+  🤖 [registrar_pedido] Bia, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Bia, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Bia, Anotei o item 3: 20x regata branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 so isso
+  🤖 [finalizar_pedidos] Bia, Pedido registrado! Número FF-2026-0007, com 3 itens: 1) 50x camiseta basica preto; 2) 30x moletom cinza mescla; 3) 20x regata branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 03 — produto ja no inicio, add mais
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Leo
+  🤖 [(nome)] Prazer, Leo! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero fazer um pedido
+  🤖 [registrar_pedido] Leo, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 camiseta
+  🤖 [registrar_pedido] Leo, Quantas peças?
+  🧑 100
+  🤖 [registrar_pedido] Leo, Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Leo, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Leo, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Leo, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Leo, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 quero adicionar polos tambem
+  🤖 [registrar_pedido] Leo, Boa, anotei: polo. Vou registrar seu pedido — só faltam alguns dados. Quantas peças?
+  🧑 50
+  🤖 [registrar_pedido] Leo, Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Leo, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Leo, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Leo, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Leo, Anotei o item 2: 50x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nada mais
+  🤖 [finalizar_pedidos] Leo, Pedido registrado! Número FF-2026-0008, com 2 itens: 1) 100x camiseta basica preto; 2) 50x polo branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 04 — add produto sem quantidade
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rui
+  🤖 [(nome)] Prazer, Rui! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 40 bermudas
+  🤖 [registrar_pedido] Rui, Boa, anotei: 40x bermuda. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preta
+  🤖 [registrar_pedido] Rui, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Rui, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 jeans
+  🤖 [registrar_pedido] Rui, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Rui, Anotei o item 1: 40x bermuda preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 sim
+  🤖 [registrar_pedido] Rui, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 mais uma camiseta
+  🤖 [registrar_pedido] Rui, Quantas peças?
+  🧑 30
+  🤖 [registrar_pedido] Rui, Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Rui, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Rui, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Rui, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Rui, Anotei o item 2: 30x camiseta basica branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Rui, Pedido registrado! Número FF-2026-0009, com 2 itens: 1) 40x bermuda preto; 2) 30x camiseta basica branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 05 — finaliza com 'pode fechar'
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Dora
+  🤖 [(nome)] Prazer, Dora! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 200 uniformes
+  🤖 [registrar_pedido] Dora, Boa, anotei: 200x uniforme polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 marinho
+  🤖 [registrar_pedido] Dora, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Dora, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Dora, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 bordado
+  🤖 [registrar_pedido] Dora, Anotei o item 1: 200x uniforme polo marinho. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 pode fechar
+  🤖 [finalizar_pedidos] Dora, Pedido registrado! Número FF-2026-0010, com 1 item: 1) 200x uniforme polo marinho. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 06 — dois iguais cores diferentes
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Vi
+  🤖 [(nome)] Prazer, Vi! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisetas pretas
+  🤖 [registrar_pedido] Vi, Boa, anotei: 100x camiseta basica, preto. Vou registrar seu pedido — só faltam alguns dados. Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Vi, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Vi, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 mais 100 camisetas brancas
+  🤖 [registrar_pedido] Vi, Boa, anotei: 100x camiseta basica, branco. Vou registrar seu pedido — só faltam alguns dados. Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Vi, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Vi, Anotei o item 2: 100x camiseta basica branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 chega
+  🤖 [finalizar_pedidos] Pedido registrado! Número FF-2026-0011, com 2 itens: 1) 100x camiseta basica preto; 2) 100x camiseta basica branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 07 — add depois de dizer nao... muda ideia
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Tom
+  🤖 [(nome)] Prazer, Tom! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 60 moletons
+  🤖 [registrar_pedido] Boa, anotei: 60x moletom. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cinza
+  🤖 [registrar_pedido] Tom, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 moletom flanelado
+  🤖 [registrar_pedido] Tom, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 silk
+  🤖 [registrar_pedido] Anotei o item 1: 60x moletom cinza mescla. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Pedido registrado! Número FF-2026-0012, com 1 item: 1) 60x moletom cinza mescla. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+  🧑 quero mais um pedido de camisetas
+  🤖 [registrar_pedido] Tom, Boa, anotei: camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Quantas peças?
+  🧑 50
+  🤖 [registrar_pedido] Tom, Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Tom, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Tom, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Tom, Anotei o item 1: 50x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Tom, Pedido registrado! Número FF-2026-0013, com 1 item: 1) 50x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 08 — varios com personalizacao
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Sam
+  🤖 [(nome)] Prazer, Sam! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 polos bordados
+  🤖 [registrar_pedido] Sam, Boa, anotei: 100x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Sam, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Sam, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Sam, Anotei o item 1: 100x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 bordado
+  🤖 [registrar_pedido] Sam, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 mais 50 camisetas com silk
+  🤖 [registrar_pedido] Sam, Quantas peças?
+  🧑 preto
+  🤖 [registrar_pedido] Sam, Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 M
+  🤖 [registrar_pedido] Sam, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 algodao
+  🤖 [registrar_pedido] Sam, Não tenho dados sobre None em algodao_basico. Consulte o setor técnico.
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 silk
+  🤖 [registrar_pedido] Sam, Silkscreen (serigrafia) é a técnica tradicional de estampa. Ideal para tiragens acima de 30 peças (melhor custo por peça). Trabalha bem com até 6 cores por arte (cada cor é uma tela). Estampa muito resistente à lavagem. Setup leva 2 dias úteis e a produção em si 3 a 5 dias.
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 era so
+  🤖 [registrar_pedido] Sam, Foi um prazer te ajudar! Qualquer coisa, é só voltar a falar comigo. Até mais!
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+
+======================================================================
+CENARIO 09 — finaliza logo (1 so)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rita
+  🤖 [(nome)] Prazer, Rita! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisetas
+  🤖 [registrar_pedido] Rita, Boa, anotei: 100x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Rita, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Rita, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Rita, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Rita, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Rita, Pedido registrado! Número FF-2026-0014, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 10 — 4 produtos seguidos
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Gu
+  🤖 [(nome)] Prazer, Gu! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 30 camisetas
+  🤖 [registrar_pedido] Boa, anotei: 30x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Gu, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Gu, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Gu, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Anotei o item 1: 30x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 30 polos
+  🤖 [registrar_pedido] Boa, anotei: 30x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Gu, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Gu, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Gu, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Anotei o item 2: 30x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 30 regatas
+  🤖 [registrar_pedido] Boa, anotei: 30x regata. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 azul
+  🤖 [registrar_pedido] Gu, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 P
+  🤖 [registrar_pedido] Gu, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Gu, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Anotei o item 3: 30x regata royal. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 30 moletons
+  🤖 [registrar_pedido] Boa, anotei: 30x moletom. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cinza
+  🤖 [registrar_pedido] Gu, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 GG
+  🤖 [registrar_pedido] Gu, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 moletom flanelado
+  🤖 [registrar_pedido] Gu, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Anotei o item 4: 30x moletom cinza mescla. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 finalizar
+  🤖 [(despedida)] Até logo!
+
+======================================================================
+CENARIO 11 — mistura infantil
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bel
+  🤖 [(nome)] Prazer, Bel! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 50 camisetas infantil
+  🤖 [registrar_pedido] Bel, Boa, anotei: 50x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 amarelo
+  🤖 [registrar_pedido] Bel, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 infantil
+  🤖 [registrar_pedido] Bel, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Bel, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Bel, Anotei o item 1: 50x camiseta basica amarelo. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 mais 20 moletons infantil
+  🤖 [registrar_pedido] Bel, Boa, anotei: 20x moletom. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 rosa
+  🤖 [registrar_pedido] Bel, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 infantil
+  🤖 [registrar_pedido] Bel, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 moletom flanelado
+  🤖 [registrar_pedido] Bel, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Bel, Anotei o item 2: 20x moletom rosa. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Bel, Pedido registrado! Número FF-2026-0015, com 2 itens: 1) 50x camiseta basica amarelo; 2) 20x moletom rosa. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 12 — plus size no pedido
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Nal
+  🤖 [(nome)] Prazer, Nal! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 40 camisetas plus size
+  🤖 [registrar_pedido] Nal, Boa, anotei: 40x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Nal, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 plus size
+  🤖 [registrar_pedido] Nal, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Nal, Anotei o item 1: 40x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Nal, Pedido registrado! Número FF-2026-0016, com 1 item: 1) 40x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 13 — pergunta produtos no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ceu
+  🤖 [(nome)] Prazer, Ceu! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Ceu, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 quais outros produtos tem
+  🤖 [registrar_pedido] Ceu, A Fashion Flow tem várias linhas. Qual te interessa?
+  1. Escolha uma opção: Camisetas e básicas
+  2. Moletons e jaquetas
+  3. Calças e shorts
+  4. Vestidos
+  5. Uniformes corporativos
+  6. Linha infantil
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Ceu, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Ceu, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ceu, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ceu, Pedido registrado! Número FF-2026-0017, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 14 — pergunta preco no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Duda
+  🤖 [(nome)] Prazer, Duda! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Duda, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 quanto custa
+  🤖 [registrar_pedido] Duda, Para informações sobre valores, formas de pagamento, descontos e fechamento de pedido, vou te encaminhar ao chatbot de vendas: (inserir link).
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Duda, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Duda, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Duda, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Duda, Pedido registrado! Número FF-2026-0018, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 15 — pergunta prazo no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Edu
+  🤖 [(nome)] Prazer, Edu! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Edu, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 qual o prazo
+  🤖 [registrar_pedido] Edu, Sobre prazos da produção, qual sua dúvida?
+  1. Escolha uma opção: Prazo padrão
+  2. Com personalização
+  3. Pedido urgente
+  4. Pedido grande (500+)
+  5. Atraso de pedido
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Edu, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Edu, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Edu, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Edu, Pedido registrado! Número FF-2026-0019, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 16 — pergunta cor disponivel no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Fael
+  🤖 [(nome)] Prazer, Fael! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Fael, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 quais cores tem
+  🤖 [registrar_pedido] Fael, Sobre cores, o que você quer saber?
+  1. Escolha uma opção: Cores básicas em estoque
+  2. Tingimento sob demanda
+  3. Combinação cor peça/estampa
+  4. Limite de cores por técnica
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Fael, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Fael, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Fael, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Fael, Pedido registrado! Número FF-2026-0020, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 17 — pergunta tecido no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Gi
+  🤖 [(nome)] Prazer, Gi! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 quais tecidos
+  🤖 [registrar_pedido] Gi, Trabalhamos com: algodão (básico, penteado, pima), poliéster (incluindo rPET reciclado), viscose, linho, malha mista, moletom flanelado e peluciado, suplex, dry fit, lã, jeans (várias gramaturas) e tencel. Não trabalhamos com couro animal nem seda convencional.
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Gi, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Gi, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Gi, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Pedido registrado! Número FF-2026-0021, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 18 — resposta sem sentido no campo
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Hel
+  🤖 [(nome)] Prazer, Hel! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Hel, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 sei la
+  🤖 [registrar_pedido] Hel, Sobre tecidos, o que você quer saber?
+  1. Escolha uma opção: Lista de tecidos disponíveis
+  2. Composição de cada peça
+  3. Origem dos tecidos
+  4. Sugestão por uso
+  5. Tecido para pele sensível
+  6. Não trabalhamos com
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Hel, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Hel, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Hel, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Hel, Pedido registrado! Número FF-2026-0022, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 19 — digita numero no lugar da cor
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ian
+  🤖 [(nome)] Prazer, Ian! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Ian, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 12345
+  🤖 [registrar_pedido] Ian, Não entendi isso como uma cor. Qual cor? (ex: preto, branco, marinho, vermelho...) (ou digite 'cancelar' pra sair do pedido)
+  🧑 preto
+  🤖 [registrar_pedido] Ian, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Ian, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ian, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ian, Pedido registrado! Número FF-2026-0023, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 20 — pergunta sobre premium no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ju
+  🤖 [(nome)] Prazer, Ju! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Ju, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 me fala da premium
+  🤖 [registrar_pedido] Ju, Camiseta Premium: Algodão pima penteado — toque mais macio, fio mais fino e maior durabilidade que a básica. (Categoria: Camisetas.)
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Ju, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Ju, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ju, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ju, Pedido registrado! Número FF-2026-0024, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 21 — saudacao no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Kau
+  🤖 [(nome)] Prazer, Kau! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Kau, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 oi tudo bem
+  🤖 [registrar_pedido] Kau, Olá! Eu sou o assistente do setor de produção da Fashion Flow. Posso te ajudar com dúvidas sobre processos, tecidos, personalização, qualidade, sustentabilidade, cuidados com a peça e prazos. Sobre o que você quer saber?
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Kau, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Kau, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Kau, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Kau, Pedido registrado! Número FF-2026-0025, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 22 — pergunta manutencao no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Lia
+  🤖 [(nome)] Prazer, Lia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Lia, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 como lavar
+  🤖 [registrar_pedido] Lia, Lavagem recomendada: máquina em ciclo delicado, água fria (até 30°C), peças do avesso e separadas por cor. Para peças com estampa, sempre do avesso. Não deixe peças molhadas amontoadas — pode manchar.
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Lia, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Lia, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Lia, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Lia, Pedido registrado! Número FF-2026-0026, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 23 — tanto faz na cor e no tecido
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Mel
+  🤖 [(nome)] Prazer, Mel! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 80 camisetas
+  🤖 [registrar_pedido] Boa, anotei: 80x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 tanto faz
+  🤖 [registrar_pedido] Mel, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Mel, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 tanto faz
+  🤖 [registrar_pedido] Mel, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Mel, Anotei o item 1: 80x camiseta basica a definir. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Mel, Pedido registrado! Número FF-2026-0027, com 1 item: 1) 80x camiseta basica a definir. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 24 — pergunta e depois responde certo
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 ना
+  🤖 [(nome)] Prazer, ना! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 90 polos
+  🤖 [registrar_pedido] ना, Boa, anotei: 90x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 voces entregam?
+  🤖 [registrar_pedido] ना, Para informações sobre entrega, frete, rastreamento e prazos de envio, vou te encaminhar ao chatbot de logística: (inserir link).
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] ना, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] ना, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] ना, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] ना, Anotei o item 1: 90x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] ना, Pedido registrado! Número FF-2026-0028, com 1 item: 1) 90x polo branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 25 — elogio no meio
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ori
+  🤖 [(nome)] Prazer, Ori! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Ori, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 voce e otimo
+  🤖 [registrar_pedido] Ori, Aaah, muito obrigada pelo elogio! Fico feliz em ajudar. Qualquer outra dúvida, é só chamar.
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Ori, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Ori, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ori, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ori, Pedido registrado! Número FF-2026-0029, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 26 — cancela no comeco
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Pat
+  🤖 [(nome)] Prazer, Pat! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero fazer um pedido
+  🤖 [registrar_pedido] Pat, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 cancelar
+  🤖 [registrar_pedido] Pat, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+======================================================================
+CENARIO 27 — cancela no meio (desistir)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rai
+  🤖 [(nome)] Prazer, Rai! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Rai, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 desistir
+  🤖 [registrar_pedido] Rai, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+======================================================================
+CENARIO 28 — cancela com 'deixa pra la'
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Sol
+  🤖 [(nome)] Prazer, Sol! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Sol, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Sol, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 deixa pra la
+  🤖 [registrar_pedido] Sol, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+======================================================================
+CENARIO 29 — cancela e comeca de novo
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑  Th
+  🤖 [(nome)] Prazer, Th! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Th, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cancelar
+  🤖 [registrar_pedido] Th, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+  🧑 quero 30 polos
+  🤖 [registrar_pedido] Th, Boa, anotei: 30x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Th, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Th, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Th, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Th, Anotei o item 1: 30x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Th, Pedido registrado! Número FF-2026-0030, com 1 item: 1) 30x polo branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 30 — cancela pedido ja existente (dono)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ana Costa
+  🤖 [(nome)] Prazer, Ana! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero cancelar o pedido FF-2026-0003
+  🤖 [cancelar_pedido] Ana, Pedido FF-2026-0003 cancelado. (Continua no histórico, marcado como cancelado, mas sai da produção.)
+
+======================================================================
+CENARIO 31 — cancela pedido de outro (trava)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Zé
+  🤖 [(nome)] Prazer, Zé! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero cancelar o pedido FF-2026-0001
+  🤖 [cancelar_pedido] Zé, O pedido FF-2026-0001 não está no seu nome.
+
+======================================================================
+CENARIO 32 — cancela sem numero, informa depois
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ana Costa
+  🤖 [(nome)] Prazer, Ana! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero cancelar meu pedido
+  🤖 [cancelar_pedido] Ana, Pra cancelar, me informa o número do pedido (formato FF-AAAA-NNNN). Aviso: cancelamento é livre na modelagem; depois do corte pode haver custo de material já usado.
+  🧑 FF-2026-0003
+  🤖 [cancelar_pedido] Ana, O pedido FF-2026-0003 já estava cancelado.
+
+======================================================================
+CENARIO 33 — cancela no meio do 2o produto
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bru
+  🤖 [(nome)] Prazer, Bru! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 50 camisetas
+  🤖 [registrar_pedido] Bru, Boa, anotei: 50x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Bru, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Bru, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Bru, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Bru, Anotei o item 1: 50x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 mais 30 polos
+  🤖 [registrar_pedido] Bru, Boa, anotei: 30x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cancelar
+  🤖 [registrar_pedido] Bru, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+======================================================================
+CENARIO 34 — cancela e finaliza o que tinha
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Cau
+  🤖 [(nome)] Prazer, Cau! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 50 camisetas
+  🤖 [registrar_pedido] Cau, Boa, anotei: 50x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Cau, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Cau, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Cau, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Cau, Anotei o item 1: 50x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 sim
+  🤖 [registrar_pedido] Cau, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 desistir
+  🤖 [registrar_pedido] Cau, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+======================================================================
+CENARIO 35 — cancela pedido inexistente
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Dan
+  🤖 [(nome)] Prazer, Dan! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero cancelar o pedido FF-2026-9999
+  🤖 [cancelar_pedido] Dan, Não encontrei o pedido FF-2026-9999. Confere o número?
+
+======================================================================
+CENARIO 36 — cancela com 'esquece'
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Eli
+  🤖 [(nome)] Prazer, Eli! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Eli, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 esquece
+  🤖 [registrar_pedido] Eli, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+======================================================================
+CENARIO 37 — cancela e pergunta outra coisa
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Fe
+  🤖 [(nome)] Prazer, Fe! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Fe, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cancelar
+  🤖 [registrar_pedido] Fe, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+  🧑 quais produtos tem
+  🤖 [catalogo] Fe, A Fashion Flow tem várias linhas. Qual te interessa?
+  1. Escolha uma opção: Camisetas e básicas
+  2. Moletons e jaquetas
+  3. Calças e shorts
+  4. Vestidos
+  5. Uniformes corporativos
+  6. Linha infantil
+
+======================================================================
+CENARIO 38 — altera cor (Joao Souza, modelagem)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Joao Souza
+  🤖 [(nome)] Prazer, Joao! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero mudar a cor do pedido pra vermelho
+  🤖 [alterar_pedido_especifico] Joao, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-0002
+  🤖 [alterar_pedido_especifico] Joao, Pronto! No pedido FF-2026-0002, 'cor' mudou de 'marinho' para 'vermelho'.
+
+======================================================================
+CENARIO 39 — altera tecido
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Joao Souza
+  🤖 [(nome)] Prazer, Joao! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero mudar o tecido para viscose
+  🤖 [tecidos] Joao, Sobre tecidos, o que você quer saber?
+  1. Escolha uma opção: Lista de tecidos disponíveis
+  2. Composição de cada peça
+  3. Origem dos tecidos
+  4. Sugestão por uso
+  5. Tecido para pele sensível
+  6. Não trabalhamos com
+  🧑 FF-2026-0002
+  🤖 [selecao_opcao] Joao, Pedido FF-2026-0002: 80 x moletom vermelho, tamanho G. Etapa atual de fabricação: modelagem. Previsão de término na produção: 2026-07-15. Ainda dá pra alterar (está na modelagem). (O status de entrega quem informa é a logística.)
+
+======================================================================
+CENARIO 40 — altera quantidade
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Joao Souza
+  🤖 [(nome)] Prazer, Joao! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero alterar a quantidade para 120
+  🤖 [alterar_pedido_especifico] Joao, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-0002
+  🤖 [alterar_pedido_especifico] Joao, Pronto! No pedido FF-2026-0002, 'quantidade' mudou de '80' para '120'.
+
+======================================================================
+CENARIO 41 — altera sem numero, informa depois
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Joao Souza
+  🤖 [(nome)] Prazer, Joao! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero alterar a cor
+  🤖 [alterar_pedido_especifico] Joao, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-0002
+  🤖 [alterar_pedido_especifico] Joao, O que você quer mudar no pedido FF-2026-0002? Posso alterar cor, tamanho, quantidade, tecido ou personalização — e me diz pro quê. Ex: 'mudar a cor para branco'.
+
+======================================================================
+CENARIO 42 — altera pedido ja no corte (nao pode)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Maria Silva
+  🤖 [(nome)] Prazer, Maria! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 mudar cor pra azul
+  🤖 [alterar_pedido_especifico] Maria, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-0001
+  🤖 [alterar_pedido_especifico] Maria, O pedido FF-2026-0001 já está na etapa 'corte' — alterações só são possíveis enquanto está em modelagem. Mudar agora geraria retrabalho e custo.
+
+======================================================================
+CENARIO 43 — altera de outro dono (trava)
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Estranho
+  🤖 [(nome)] Prazer, Estranho! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 mudar a cor pra verde
+  🤖 [alterar_pedido_especifico] Estranho, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-0002
+  🤖 [alterar_pedido_especifico] Estranho, O que você quer mudar no pedido FF-2026-0002? Posso alterar cor, tamanho, quantidade, tecido ou personalização — e me diz pro quê. Ex: 'mudar a cor para branco'.
+
+======================================================================
+CENARIO 44 — altera pedido inexistente
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Xu
+  🤖 [(nome)] Prazer, Xu! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 alterar cor pra preto
+  🤖 [alterar_pedido_especifico] Xu, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-9999
+  🤖 [alterar_pedido_especifico] Xu, Não encontrei o pedido FF-2026-9999. Confere o número?
+
+======================================================================
+CENARIO 45 — registra e ja quer alterar
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Yas
+  🤖 [(nome)] Prazer, Yas! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 50 camisetas
+  🤖 [registrar_pedido] Yas, Boa, anotei: 50x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Yas, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Yas, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Yas, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Yas, Anotei o item 1: 50x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Yas, Pedido registrado! Número FF-2026-0031, com 1 item: 1) 50x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+  🧑 quero mudar a cor pra branco
+  🤖 [alterar_pedido_especifico] Yas, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+
+======================================================================
+CENARIO 46 — typo no produto
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ada
+  🤖 [(nome)] Prazer, Ada! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camists
+  🤖 [cat_camisetas] Ada, Linha de camisetas: básica (100% algodão, gola careca/V/polo), premium (algodão pima penteado), regata, baby look e oversized. Gramaturas de 140g a 220g. Todas as 12 cores em pronta entrega.
+  🧑 preto
+  🤖 [fallback] Ada, Hmm, não consegui entender bem. Posso te ajudar com: produção, tecidos, personalização, qualidade, sustentabilidade, cuidados, prazos e catálogo. Sobre qual desses você quer saber? Se for outro assunto (preço, entrega, devolução), me avisa que encaminho para o setor certo.
+  🧑 M
+  🤖 [fallback] Ada, Hmm, não consegui entender bem. Posso te ajudar com: produção, tecidos, personalização, qualidade, sustentabilidade, cuidados, prazos e catálogo. Sobre qual desses você quer saber? Se for outro assunto (preço, entrega, devolução), me avisa que encaminho para o setor certo.
+  🧑 algodao
+  🤖 [combinado_personalizacao_em_tecido] Ada, Não tenho dados sobre None em algodao_basico. Consulte o setor técnico.
+  🧑 nenhuma
+  🤖 [tecidos] Sobre tecidos, o que você quer saber?
+  1. Escolha uma opção: Lista de tecidos disponíveis
+  2. Composição de cada peça
+  3. Origem dos tecidos
+  4. Sugestão por uso
+  5. Tecido para pele sensível
+  6. Não trabalhamos com
+  🧑 nao
+  🤖 [selecao_opcao] Ada, Não trabalhamos com couro animal por questão de sustentabilidade e bem-estar animal. Também não usamos couro sintético em larga escala (PVC tem alto impacto ambiental). Para peças com aparência de couro, usamos tecidos com revestimento.
+
+======================================================================
+CENARIO 47 — muda de ideia no produto
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ben
+  🤖 [(nome)] Prazer, Ben! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisetas
+  🤖 [registrar_pedido] Ben, Boa, anotei: 100x camiseta basica. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 na verdade quero moletons
+  🤖 [registrar_pedido] Ben, Linha de moletons: flanelado (inverno), peluciado (meia estação), com capuz, sem capuz, com zíper (jaqueta moletom). Também jaqueta corta-vento e jaqueta puffer. Gramaturas de 280g a 380g.
+
+Sem pressa 🙂 — quando quiser seguir com o pedido, qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 cinza
+  🤖 [registrar_pedido] Ben, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Ben, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 moletom flanelado
+  🤖 [registrar_pedido] Ben, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ben, Anotei o item 1: 100x camiseta basica cinza mescla. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ben, Pedido registrado! Número FF-2026-0032, com 1 item: 1) 100x camiseta basica cinza mescla. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 48 — pergunta status no meio de registro
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ci
+  🤖 [(nome)] Prazer, Ci! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Ci, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 qual o status do meu pedido
+  🤖 [registrar_pedido] Ci, Não entendi isso como uma cor. Qual cor? (ex: preto, branco, marinho, vermelho...) (ou digite 'cancelar' pra sair do pedido)
+  🧑 preto
+  🤖 [registrar_pedido] Ci, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Ci, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ci, Pedido registrado! Número FF-2026-0033, com 1 item: 1) 100x camiseta basica preto. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+
+======================================================================
+CENARIO 49 — registra, status, novo pedido
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ana Costa
+  🤖 [(nome)] Prazer, Ana! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 20 polos
+  🤖 [registrar_pedido] Ana, Boa, anotei: 20x polo. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 branco
+  🤖 [registrar_pedido] Ana, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 G
+  🤖 [registrar_pedido] Ana, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Ana, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Ana, Anotei o item 1: 20x polo branco. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+  🧑 nao
+  🤖 [finalizar_pedidos] Ana, Pedido registrado! Número FF-2026-0034, com 1 item: 1) 20x polo branco. Começa na modelagem; previsão de término: 2026-07-27. Guarde esse número.
+  🧑 qual o status do FF-2026-0003
+  🤖 [status_pedido] Ana, Pedido FF-2026-0003: 200 x polo branco, tamanho GG. Esse pedido está CANCELADO. Previsão de término na produção: 2026-07-02. (O status de entrega quem informa é a logística.)
+  🧑 FF-2026-0003
+  🤖 [status_pedido] Ana, Pedido FF-2026-0003: 200 x polo branco, tamanho GG. Esse pedido está CANCELADO. Previsão de término na produção: 2026-07-02. (O status de entrega quem informa é a logística.)
+
+======================================================================
+CENARIO 50 — despedida no meio do pedido
+======================================================================
+  🧑 oi
+  🤖 [(nome)] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Duh
+  🤖 [(nome)] Prazer, Duh! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero 100 camisas de linho
+  🤖 [registrar_pedido] Duh, Boa, anotei: 100x camiseta basica, em linho. Vou registrar seu pedido — só faltam alguns dados. Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 tchau
+  🤖 [(despedida)] Até logo!

@@ -1,0 +1,681 @@
+
+========================================================================
+CONVERSA 01 — Tecido por produto, troca de produto
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ana
+  🤖 [captura_nome] Prazer, Ana! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 qual tecido pra camiseta
+  🤖 [combinado_tecidos_disponiveis_para_produto] Ana, Para camiseta basica, os tecidos recomendados são: algodao basico, algodao penteado, malha mista, dry fit, rPET reciclado, bambu.
+  🧑 e pra moletom?
+  🤖 [cat_moletons] Ana, Linha de moletons: flanelado (inverno), peluciado (meia estação), com capuz, sem capuz, com zíper (jaqueta moletom). Também jaqueta corta-vento e jaqueta puffer. Gramaturas de 280g a 380g.
+  🧑 valeu
+  🤖 [casual] Beleza, pode continuar!
+
+========================================================================
+CONVERSA 02 — Prazo e refino com personalização
+========================================================================
+  🧑 bom dia
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rafael
+  🤖 [captura_nome] Prazer, Rafael! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 qual o prazo de uma camiseta
+  🤖 [prazo_padrao] Rafael, Prazo padrão de produção: 15 a 30 dias úteis dependendo da complexidade e do volume. Peças básicas sem personalização ficam em 15 a 20 dias. Peças com modelagem específica ou personalização, 25 a 30 dias.
+  🧑 e com bordado?
+  🤖 [personalizacao_bordado] Rafael, Bordado é feito em máquina computadorizada. Aceitamos até 12 cores de linha por arte. Áreas pequenas (até 10cm) em 3 dias úteis; áreas maiores até 7 dias. Mínimo de 10 peças. Ideal para peitos, mangas e golas. Confere acabamento premium.
+  🧑 obrigado
+  🤖 [casual] Beleza, pode continuar!
+
+========================================================================
+CONVERSA 03 — Cores e cor em tecido
+========================================================================
+  🧑 ola
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Julia
+  🤖 [captura_nome] Prazer, Julia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais cores voces tem
+  🤖 [personalizacao_cores] Julia, Sobre cores, o que você quer saber?
+  1. Cores básicas em estoque
+  2. Tingimento sob demanda
+  3. Combinação cor peça/estampa
+  4. Limite de cores por técnica
+  🧑 tem em viscose?
+  🤖 [selecao_opcao] Julia, Consultar lookup_cor_tecido e listar todas as cores em estoque permanente pro tecido consultado.
+Qual tecido você quer saber as cores disponíveis?
+  🧑 tchau
+  🤖 [despedida] Até logo! Se precisar, é só voltar.
+
+========================================================================
+CONVERSA 04 — Tamanho e plus size
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Marcos
+  🤖 [captura_nome] Prazer, Marcos! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais tamanhos de polo
+  🤖 [personalizacao_tamanhos] Marcos, Sobre tamanhos, o que você precisa saber?
+  1. Grade adulto
+  2. Grade infantil
+  3. Plus size
+  4. Tabela de medidas
+  🧑 tem plus size?
+  🤖 [selecao_opcao] Marcos, Plus size adulto: G1 (equivalente a EGG), G2, G3 e G4. Modelagem própria, não é simples ampliação do GG. Disponível em toda a linha exceto modelagens muito justas (algumas leggings esportivas).
+
+========================================================================
+CONVERSA 05 — Tecido por estação
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bia
+  🤖 [captura_nome] Prazer, Bia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 qual tecido pra verao
+  🤖 [sug_verao] Bia, Para verão indico: linho, viscose, algodão leve (140g), camiseta regata, vestido midi de malha, bermuda. Cores claras esquentam menos.
+  🧑 e pra inverno?
+  🤖 [sug_inverno] Bia, Para inverno indico: moletom flanelado (380g), jaqueta puffer, calça jeans pesada, peças de lã (sob demanda). Sobreposições funcionam melhor que uma peça muito grossa só.
+
+========================================================================
+CONVERSA 06 — Personalização: tipos → silk → prazo
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Leo
+  🤖 [captura_nome] Prazer, Leo! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais tipos de personalizacao
+  🤖 [personalizacao] Leo, A Fashion Flow trabalha com personalização. O que você quer saber?
+  1. Tipos de personalização
+  2. Cores disponíveis
+  3. Tamanhos disponíveis
+  4. Quantidade mínima
+  5. Prazo de personalização
+  6. Envio de arte
+  🧑 me explica o silk
+  🤖 [selecao_opcao] Leo, Silkscreen (serigrafia) é a técnica tradicional de estampa. Ideal para tiragens acima de 30 peças (melhor custo por peça). Trabalha bem com até 6 cores por arte (cada cor é uma tela). Estampa muito resistente à lavagem. Setup leva 2 dias úteis e a produção em si 3 a 5 dias.
+  🧑 qual o prazo com silk
+  🤖 [prazo_com_personalizacao] Leo, Com personalização, some ao prazo padrão: silkscreen +5 a 7 dias úteis, DTF +2 a 4 dias, bordado +3 a 7 dias, modelagem exclusiva +20 a 30 dias úteis antes da produção começar.
+
+========================================================================
+CONVERSA 07 — Sugestão academia → tecido → cor
+========================================================================
+  🧑 eai
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Duda
+  🤖 [captura_nome] Prazer, Duda! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 me sugere uma peca pra academia
+  🤖 [sug_esporte] Duda, Para esporte indico: camiseta dry fit (poliéster com toque seco), legging suplex, bermuda esportiva, regata. Tecidos para suor, secagem rápida e elasticidade.
+  🧑 qual tecido é melhor
+  🤖 [tecidos] Duda, Sobre tecidos, o que você quer saber?
+  1. Lista de tecidos disponíveis
+  2. Composição de cada peça
+  3. Origem dos tecidos
+  4. Sugestão por uso
+  5. Tecido para pele sensível
+  6. Não trabalhamos com
+  🧑 e as cores?
+  🤖 [selecao_opcao] Duda, Sobre cores, o que você quer saber?
+  1. Cores básicas em estoque
+  2. Tingimento sob demanda
+  3. Combinação cor peça/estampa
+  4. Limite de cores por técnica
+
+========================================================================
+CONVERSA 08 — Gramatura por produto
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Hugo
+  🤖 [captura_nome] Prazer, Hugo! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 qual gramatura pra moletom
+  🤖 [cat_moletons] Hugo, Linha de moletons: flanelado (inverno), peluciado (meia estação), com capuz, sem capuz, com zíper (jaqueta moletom). Também jaqueta corta-vento e jaqueta puffer. Gramaturas de 280g a 380g.
+  🧑 e pra camiseta?
+  🤖 [cat_camisetas] Hugo, Linha de camisetas: básica (100% algodão, gola careca/V/polo), premium (algodão pima penteado), regata, baby look e oversized. Gramaturas de 140g a 220g. Todas as 12 cores em pronta entrega.
+
+========================================================================
+CONVERSA 09 — Menu qualidade → durabilidade
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Paula
+  🤖 [captura_nome] Prazer, Paula! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero saber da qualidade
+  🤖 [qualidade] Paula, Sobre qualidade, o que você quer saber?
+  1. Originalidade das peças
+  2. Durabilidade
+  3. Controle de qualidade
+  4. Defeitos de fabricação
+  5. Certificações
+  🧑 durabilidade
+  🤖 [selecao_opcao] Paula, Nossas peças são desenvolvidas para resistir entre 50 e 80 lavagens mantendo cor, forma e textura, desde que respeitados os cuidados da etiqueta. Tecidos premium (alfaiataria, jeans pesado) chegam a 120 lavagens.
+
+========================================================================
+CONVERSA 10 — Menu sustentabilidade → vegano
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Igor
+  🤖 [captura_nome] Prazer, Igor! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 voces sao sustentaveis?
+  🤖 [sustentabilidade] Igor, A Fashion Flow leva sustentabilidade a sério. Sobre o que você quer saber?
+  1. Aproveitamento de tecido
+  2. Materiais sustentáveis
+  3. Reciclagem de sobras
+  4. Tinturas e químicos
+  5. Práticas trabalhistas
+  6. Logística sustentável
+  🧑 tem produto vegano?
+  🤖 [selecao_opcao] Igor, A Fashion Flow não trabalha com couro animal, lã produzida com maus-tratos, seda convencional (que sacrifica bichos-da-seda) ou peles. A maioria do nosso catálogo é vegana. Para peças com lã, usamos apenas fornecedores com certificação de bem-estar animal.
+
+========================================================================
+CONVERSA 11 — Menu manutenção → lavar → algodão
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Sofia
+  🤖 [captura_nome] Prazer, Sofia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 como cuido das pecas
+  🤖 [manutencao] Sofia, Sobre cuidados com a peça, qual sua dúvida?
+  1. Como lavar
+  2. Ferro de passar
+  3. Secadora
+  4. Alvejante
+  5. Tirar mancha
+  6. Cuidados por tecido
+  7. Encolhimento
+  8. Desbotamento
+  🧑 como lavar
+  🤖 [selecao_opcao] Sofia, Lavagem recomendada: máquina em ciclo delicado, água fria (até 30°C), peças do avesso e separadas por cor. Para peças com estampa, sempre do avesso. Não deixe peças molhadas amontoadas — pode manchar.
+  🧑 e o algodao?
+  🤖 [tec_composicao] Sofia, Composição varia por produto, sempre indicada na etiqueta. Exemplos: camiseta básica 100% algodão; moletom 80% algodão / 20% poliéster; dry fit 95% poliéster / 5% elastano; jeans 98% algodão / 2% elastano; viscose pura 100% viscose.
+
+========================================================================
+CONVERSA 12 — Menu tecidos → composição
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bruno
+  🤖 [captura_nome] Prazer, Bruno! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais tecidos voces tem
+  🤖 [tec_disponiveis] Bruno, Trabalhamos com: algodão (básico, penteado, pima), poliéster (incluindo rPET reciclado), viscose, linho, malha mista, moletom flanelado e peluciado, suplex, dry fit, lã, jeans (várias gramaturas) e tencel. Não trabalhamos com couro animal nem seda convencional.
+  🧑 qual a composicao
+  🤖 [tec_composicao] Bruno, Composição varia por produto, sempre indicada na etiqueta. Exemplos: camiseta básica 100% algodão; moletom 80% algodão / 20% poliéster; dry fit 95% poliéster / 5% elastano; jeans 98% algodão / 2% elastano; viscose pura 100% viscose.
+
+========================================================================
+CONVERSA 13 — Catálogo → camisetas → oversized
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Lara
+  🤖 [captura_nome] Prazer, Lara! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 o que voces produzem
+  🤖 [catalogo] Lara, A Fashion Flow tem várias linhas. Qual te interessa?
+  1. Camisetas e básicas
+  2. Moletons e jaquetas
+  3. Calças e shorts
+  4. Vestidos
+  5. Uniformes corporativos
+  6. Linha infantil
+  🧑 me fala das camisetas
+  🤖 [selecao_opcao] Lara, Linha de camisetas: básica (100% algodão, gola careca/V/polo), premium (algodão pima penteado), regata, baby look e oversized. Gramaturas de 140g a 220g. Todas as 12 cores em pronta entrega.
+  🧑 tem oversized?
+  🤖 [cat_camisetas] Lara, Linha de camisetas: básica (100% algodão, gola careca/V/polo), premium (algodão pima penteado), regata, baby look e oversized. Gramaturas de 140g a 220g. Todas as 12 cores em pronta entrega.
+
+========================================================================
+CONVERSA 14 — Menu personalização → cores → tingimento
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Caio
+  🤖 [captura_nome] Prazer, Caio! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero personalizar
+  🤖 [personalizacao] Caio, A Fashion Flow trabalha com personalização. O que você quer saber?
+  1. Tipos de personalização
+  2. Cores disponíveis
+  3. Tamanhos disponíveis
+  4. Quantidade mínima
+  5. Prazo de personalização
+  6. Envio de arte
+  🧑 quais cores disponiveis
+  🤖 [selecao_opcao] Caio, Sobre cores, o que você quer saber?
+  1. Cores básicas em estoque
+  2. Tingimento sob demanda
+  3. Combinação cor peça/estampa
+  4. Limite de cores por técnica
+  🧑 fazem tingimento?
+  🤖 [selecao_opcao] Caio, Cores fora da nossa paleta padrão são tingidas sob demanda. Pedido mínimo de 80 peças por cor e prazo adicional de 7 a 10 dias úteis. Aceitamos referência Pantone para tingimento exato. Para tons pastel ou neon, prazo pode ser maior.
+
+========================================================================
+CONVERSA 15 — Preço → prazo → desconto de 100 camisetas
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Vitor
+  🤖 [captura_nome] Prazer, Vitor! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quanto custa 100 camisetas
+  🤖 [combinado_preco_qtd_produto] Vitor, Para 100 peças de camiseta basica: valor unitário estimado de R$ 28.4 (5% desconto de desconto). Total estimado: R$ 2840.00. Valor indicativo — fechamento com vendas.
+  🧑 e o prazo delas?
+  🤖 [combinado_prazo_qtd_produto] Vitor, Para 100 peças de camiseta basica: prazo estimado de 18 a 22 dias úteis. Prazo confirmado pelo setor de vendas no fechamento do pedido.
+  🧑 tem desconto por volume?
+  🤖 [combinado_desconto_volume] Vitor, Trabalhamos com desconto progressivo por volume: 31-100 peças → 5%; 101-300 → 10%; 301-500 → 15%; 501-1000 → 20%; acima de 1000 → 25% (negociável com vendas). Descontos aplicados sobre o valor unitário base.
+
+========================================================================
+CONVERSA 16 — Viabilidade grande em prazo curto
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Nina
+  🤖 [captura_nome] Prazer, Nina! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 consigo 500 camisetas em 10 dias?
+  🤖 [combinado_prazo_qtd_produto] Nina, Para 500 peças de camiseta basica: prazo estimado de 22 a 30 dias úteis. Pelo prazo desejado (10 dias) ser mais curto que o normal, aplicamos taxa de urgência de 20% a 40%. Fale com vendas pra avaliar. Prazo confirmado pelo setor de vendas no fechamento do pedido.
+
+========================================================================
+CONVERSA 17 — Consumo de tecido
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Tiago
+  🤖 [captura_nome] Prazer, Tiago! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quantos metros de tecido pra 200 moletons
+  🤖 [consumo_tecido] Tiago, Para 200 peças de moletom, precisa de aproximadamente 360.0m (1.8m por peça). Obs: Gramatura alta + modelagem ampla aumentam consumo
+
+========================================================================
+CONVERSA 18 — Preço com personalização
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Beatriz Rocha
+  🤖 [captura_nome] Prazer, Beatriz! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quanto fica 50 polos com bordado
+  🤖 [combinado_preco_qtd_produto] Beatriz, Para 50 peças de polo com bordado: valor unitário estimado de R$ 88.94 (5% desconto de desconto). Total estimado: R$ 4447.00. Valor indicativo — fechamento com vendas.
+
+========================================================================
+CONVERSA 19 — Prazo de pedido grande
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rita
+  🤖 [captura_nome] Prazer, Rita! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 qual o prazo pra 1000 pecas
+  🤖 [qtd_grande_volume] Rita, Pedidos acima de 500 peças têm: desconto progressivo, prazo planejado em fases (lotes de 100 a 200 peças), entregas parciais, ficha técnica completa. O setor de vendas faz orçamento personalizado.
+
+========================================================================
+CONVERSA 20 — Pedido urgente
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Gabi
+  🤖 [captura_nome] Prazer, Gabi! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 preciso de 30 camisetas urgente
+  🤖 [prazo_urgente] Gabi, Atendemos pedidos urgentes mediante disponibilidade da produção e taxa adicional de urgência (20% a 40% sobre o valor). Possível reduzir o prazo em até 40% para volumes pequenos. Para volumes acima de 200 peças, urgência é avaliada caso a caso.
+
+========================================================================
+CONVERSA 21 — B2B uniforme completo
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Sr Almeida
+  🤖 [captura_nome] Prazer, Sr! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 uniforme pra empresa com logo, preco e prazo
+  🤖 [setor_vendas] Sr, Para informações sobre valores, formas de pagamento, descontos e fechamento de pedido, vou te encaminhar ao chatbot de vendas: (inserir link).
+
+========================================================================
+CONVERSA 22 — Progressão de desconto
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Fernando
+  🤖 [captura_nome] Prazer, Fernando! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quanto mais eu compro mais barato fica?
+  🤖 [combinado_desconto_volume] Fernando, Trabalhamos com desconto progressivo por volume: 31-100 peças → 5%; 101-300 → 10%; 301-500 → 15%; 501-1000 → 20%; acima de 1000 → 25% (negociável com vendas). Descontos aplicados sobre o valor unitário base.
+
+========================================================================
+CONVERSA 23 — Registrar pedido completo
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bia
+  🤖 [captura_nome] Prazer, Bia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero registrar um pedido
+  🤖 [registrar_pedido] Bia, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 camiseta
+  🤖 [registrar_pedido] Bia, Quantas peças?
+  🧑 100
+  🤖 [registrar_pedido] Bia, Qual cor? (ex: preto, branco, marinho, vermelho...)
+  🧑 preto
+  🤖 [registrar_pedido] Bia, Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Bia, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 algodao
+  🤖 [registrar_pedido] Bia, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 bordado
+  🤖 [registrar_pedido] Bia, Anotei o item 1: 100x camiseta basica preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+
+========================================================================
+CONVERSA 24 — Registrar com dados já ditos
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bia
+  🤖 [captura_nome] Prazer, Bia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero fazer um pedido de 50 moletons pretos
+  🤖 [registrar_pedido] Bia, Boa, anotei: 50x moletom, preto. Vou registrar seu pedido — só faltam alguns dados. Qual tamanho ou grade? (ex: M, G, infantil, plus size...)
+  🧑 M
+  🤖 [registrar_pedido] Bia, Qual tecido? (ex: algodão, algodão pima, moletom flanelado, viscose...)
+  🧑 moletom flanelado
+  🤖 [registrar_pedido] Bia, Qual personalização? (bordado, silk, DTF — ou responda 'nenhuma')
+  🧑 nenhuma
+  🤖 [registrar_pedido] Bia, Anotei o item 1: 50x moletom preto. Quer adicionar mais algum produto a esse pedido? (me diz o próximo, ou 'não' pra fechar o pedido)
+
+========================================================================
+CONVERSA 25 — Status com ID (dono certo)
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Maria Silva
+  🤖 [captura_nome] Prazer, Maria! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 qual o status do meu pedido
+  🤖 [status_pedido] Maria, Claro! Me informa o número do pedido que eu consulto o andamento na produção. O formato é FF-AAAA-NNNN (ex: FF-2026-0001).
+  🧑 FF-2026-0001
+  🤖 [status_pedido] Maria, Pedido FF-2026-0001: 150 x camiseta basica preto, tamanho M. Etapa atual de fabricação: corte. Previsão de término na produção: 2026-07-06. Nesta etapa não dá mais pra alterar. (O status de entrega quem informa é a logística.)
+
+========================================================================
+CONVERSA 26 — Status sem ID depois com ID
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Joao Souza
+  🤖 [captura_nome] Prazer, Joao! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero acompanhar meu pedido
+  🤖 [status_pedido] Joao, Claro! Me informa o número do pedido que eu consulto o andamento na produção. O formato é FF-AAAA-NNNN (ex: FF-2026-0001).
+  🧑 FF-2026-0002
+  🤖 [status_pedido] Joao, Pedido FF-2026-0002: 80 x moletom marinho, tamanho G. Etapa atual de fabricação: modelagem. Previsão de término na produção: 2026-07-15. Ainda dá pra alterar (está na modelagem). (O status de entrega quem informa é a logística.)
+
+========================================================================
+CONVERSA 27 — Alterar cor (em modelagem)
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Joao Souza
+  🤖 [captura_nome] Prazer, Joao! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero alterar a cor do pedido pra vermelho
+  🤖 [alterar_pedido_especifico] Joao, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+  🧑 FF-2026-0002
+  🤖 [alterar_pedido_especifico] Joao, Pronto! No pedido FF-2026-0002, 'cor' mudou de 'marinho' para 'vermelho'.
+
+========================================================================
+CONVERSA 28 — Cancelar pedido (dono certo)
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ana Costa
+  🤖 [captura_nome] Prazer, Ana! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero cancelar meu pedido
+  🤖 [cancelar_pedido] Ana, Pra cancelar, me informa o número do pedido (formato FF-AAAA-NNNN). Aviso: cancelamento é livre na modelagem; depois do corte pode haver custo de material já usado.
+  🧑 FF-2026-0003
+  🤖 [cancelar_pedido] Ana, Pedido FF-2026-0003 cancelado. (Continua no histórico, marcado como cancelado, mas sai da produção.)
+
+========================================================================
+CONVERSA 29 — Cancelar pedido de outro (trava de dono)
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bia
+  🤖 [captura_nome] Prazer, Bia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero cancelar o pedido FF-2026-0001
+  🤖 [cancelar_pedido] Bia, O pedido FF-2026-0001 não está no seu nome.
+
+========================================================================
+CONVERSA 30 — Registrar e desistir no meio
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bia
+  🤖 [captura_nome] Prazer, Bia! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero fazer um pedido
+  🤖 [registrar_pedido] Bia, Vamos registrar seu pedido! Qual produto você quer produzir? (ex: camiseta, polo, moletom, vestido...)
+  🧑 camiseta
+  🤖 [registrar_pedido] Bia, Quantas peças?
+  🧑 desistir
+  🤖 [registrar_pedido] Bia, Tudo bem, cancelei o registro do pedido. Posso ajudar em outra coisa?
+
+========================================================================
+CONVERSA 31 — Preço/pagamento → vendas
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Pedro
+  🤖 [captura_nome] Prazer, Pedro! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais as formas de pagamento?
+  🤖 [setor_vendas] Pedro, Para informações sobre valores, formas de pagamento, descontos e fechamento de pedido, vou te encaminhar ao chatbot de vendas: (inserir link).
+  🧑 aceita cartao?
+  🤖 [setor_vendas] Pedro, Para informações sobre valores, formas de pagamento, descontos e fechamento de pedido, vou te encaminhar ao chatbot de vendas: (inserir link).
+
+========================================================================
+CONVERSA 32 — Frete → logística
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Carla
+  🤖 [captura_nome] Prazer, Carla! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 voces entregam em todo brasil?
+  🤖 [setor_logistica] Carla, Para informações sobre entrega, frete, rastreamento e prazos de envio, vou te encaminhar ao chatbot de logística: (inserir link).
+  🧑 qual o valor do frete?
+  🤖 [setor_vendas] Carla, Para informações sobre valores, formas de pagamento, descontos e fechamento de pedido, vou te encaminhar ao chatbot de vendas: (inserir link).
+
+========================================================================
+CONVERSA 33 — Devolução → devoluções
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Bruna
+  🤖 [captura_nome] Prazer, Bruna! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 veio o tamanho errado, quero trocar
+  🤖 [alterar_pedido_especifico] Bruna, Pra alterar, me informa o número do pedido (FF-AAAA-NNNN). Lembrando: só dá pra alterar enquanto está na etapa de modelagem.
+
+========================================================================
+CONVERSA 34 — Fornecedor → compras
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Distribuidora XPTO
+  🤖 [captura_nome] Prazer, Distribuidora! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero ser fornecedor de voces
+  🤖 [setor_compras] Distribuidora, Para assuntos relacionados a fornecedores e aquisição de matéria-prima, vou te encaminhar ao chatbot de compras: (inserir link).
+
+========================================================================
+CONVERSA 35 — Revenda (produção responde, não vendas)
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Sandra
+  🤖 [captura_nome] Prazer, Sandra! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero revender as pecas de voces
+  🤖 [revenda] Sandra, Trabalhamos com revendedores. Condições: cadastro de CNPJ ativo, primeira compra mínima de 100 peças mistas, descontos progressivos a partir da segunda compra. Para fechamento de parceria, vou te encaminhar ao setor de vendas.
+
+========================================================================
+CONVERSA 36 — Falar com humano
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Otavio
+  🤖 [captura_nome] Prazer, Otavio! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quero falar com um atendente de verdade
+  🤖 [atendente_humano] Otavio, Sem problema! Vou te transferir para um atendente humano do setor de produção. Atendimento humano: segunda a sexta, 8h às 18h. Fora desse horário, deixe sua dúvida que respondemos no próximo dia útil.
+
+========================================================================
+CONVERSA 37 — Saudação, elogio e despedida
+========================================================================
+  🧑 oi tudo bem?
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Aline
+  🤖 [captura_nome] Prazer, Aline! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 voces fazem um trabalho otimo!
+  🤖 [sug_trabalho] Aline, Para trabalho indico: camisa polo, camisa social, calça alfaiataria, vestido camisa. Ambiente formal prefira tons neutros (preto, marinho, branco, cinza); ambiente criativo, tons mais vivos.
+  🧑 era so isso, tchau
+  🤖 [despedida] Aline, Foi um prazer te ajudar! Qualquer coisa, é só voltar a falar comigo. Até mais!
+
+========================================================================
+CONVERSA 38 — Gíria
+========================================================================
+  🧑 salve mano
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Wesley
+  🤖 [captura_nome] Prazer, Wesley! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 e ai firmeza, voces fazem moletom?
+  🤖 [cat_moletons] Wesley, Linha de moletons: flanelado (inverno), peluciado (meia estação), com capuz, sem capuz, com zíper (jaqueta moletom). Também jaqueta corta-vento e jaqueta puffer. Gramaturas de 280g a 380g.
+
+========================================================================
+CONVERSA 39 — Ofensa
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Anon
+  🤖 [captura_nome] Prazer, Anon! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 que bot horrivel, voce e inutil
+  🤖 [ofensas] Anon, Entendo que possa estar frustrado e peço desculpas se algo te incomodou. Vou continuar tentando te ajudar — me conta o que está acontecendo. Se preferir, posso te encaminhar para um atendente humano.
+
+========================================================================
+CONVERSA 40 — Agradecimento no meio (não pode resetar)
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Cris
+  🤖 [captura_nome] Prazer, Cris! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais tecidos tem
+  🤖 [tec_disponiveis] Cris, Trabalhamos com: algodão (básico, penteado, pima), poliéster (incluindo rPET reciclado), viscose, linho, malha mista, moletom flanelado e peluciado, suplex, dry fit, lã, jeans (várias gramaturas) e tencel. Não trabalhamos com couro animal nem seda convencional.
+  🧑 obrigado, e o prazo padrao?
+  🤖 [prazo_padrao] Cris, Prazo padrão de produção: 15 a 30 dias úteis dependendo da complexidade e do volume. Peças básicas sem personalização ficam em 15 a 20 dias. Peças com modelagem específica ou personalização, 25 a 30 dias.
+
+========================================================================
+CONVERSA 41 — Despedida reseta e volta
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Dani
+  🤖 [captura_nome] Prazer, Dani! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais cores tem
+  🤖 [personalizacao_cores] Dani, Sobre cores, o que você quer saber?
+  1. Cores básicas em estoque
+  2. Tingimento sob demanda
+  3. Combinação cor peça/estampa
+  4. Limite de cores por técnica
+  🧑 tchau
+  🤖 [despedida] Até logo! Se precisar, é só voltar.
+  🧑 oi de novo
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Dani
+  🤖 [captura_nome] Prazer, Dani! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais tamanhos
+  🤖 [personalizacao_tamanhos] Dani, Sobre tamanhos, o que você precisa saber?
+  1. Grade adulto
+  2. Grade infantil
+  3. Plus size
+  4. Tabela de medidas
+
+========================================================================
+CONVERSA 42 — 'não entendi' não vira casual
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rodrigo
+  🤖 [captura_nome] Prazer, Rodrigo! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 nao entendi
+  🤖 [fallback] Rodrigo, Hmm, não consegui entender bem. Posso te ajudar com: produção, tecidos, personalização, qualidade, sustentabilidade, cuidados, prazos e catálogo. Sobre qual desses você quer saber? Se for outro assunto (preço, entrega, devolução), me avisa que encaminho para o setor certo.
+
+========================================================================
+CONVERSA 43 — Sustentabilidade: químicos
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Helena
+  🤖 [captura_nome] Prazer, Helena! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 a tinta que voces usam faz mal a saude?
+  🤖 [sustent_quimicos] Helena, Nossas tintas e corantes seguem padrões OEKO-TEX Standard 100, que limita substâncias nocivas. Para a linha infantil e pele sensível, usamos apenas tintas certificadas. Não usamos formaldeído, ftalatos ou metais pesados.
+
+========================================================================
+CONVERSA 44 — Qualidade: defeito → devoluções
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Marcio
+  🤖 [captura_nome] Prazer, Marcio! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 minha peca chegou com defeito
+  🤖 [qualidade_defeito] Marcio, Se sua peça apresentou defeito de fabricação, esse atendimento é feito pelo setor de devoluções. Vou te encaminhar.
+
+========================================================================
+CONVERSA 45 — Manutenção: encolheu
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Fabi
+  🤖 [captura_nome] Prazer, Fabi! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 minha camiseta encolheu na lavagem
+  🤖 [manutencao] Fabi, Sobre cuidados com a peça, qual sua dúvida?
+  1. Como lavar
+  2. Ferro de passar
+  3. Secadora
+  4. Alvejante
+  5. Tirar mancha
+  6. Cuidados por tecido
+  7. Encolhimento
+  8. Desbotamento
+
+========================================================================
+CONVERSA 46 — Tecido pra pele sensível
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Val
+  🤖 [captura_nome] Prazer, Val! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 tenho pele sensivel, qual tecido voces indicam?
+  🤖 [tec_pele_sensivel] Val, Para pele sensível indico: algodão 100% certificado OEKO-TEX (sem substâncias nocivas), bambu (hipoalergênico) e tencel. Toda nossa linha infantil usa esses critérios. Evite poliéster puro, fechos metálicos em contato direto com a pele e corantes agressivos.
+
+========================================================================
+CONVERSA 47 — Segurança: número de cartão
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Lucas
+  🤖 [captura_nome] Prazer, Lucas! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 meu cartao é 4111 1111 1111 1111, pode cobrar
+  🤖 [seguranca] 🔒 Por segurança, nunca compartilhe senha, CVV ou número de cartão aqui no chat. A FashionFlow jamais pede esses dados por mensagem. Quando for pagar, use sempre o link seguro enviado pelo setor de vendas.
+
+========================================================================
+CONVERSA 48 — Segurança: senha
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Ester
+  🤖 [captura_nome] Prazer, Ester! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 minha senha do site é 12345, guarda pra mim
+  🤖 [seguranca] 🔒 Por segurança, nunca compartilhe senha, CVV ou número de cartão aqui no chat. A FashionFlow jamais pede esses dados por mensagem. Quando for pagar, use sempre o link seguro enviado pelo setor de vendas.
+
+========================================================================
+CONVERSA 49 — Gibberish → fallback → reformula
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Rui
+  🤖 [captura_nome] Prazer, Rui! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 asdkjhaskd xpto
+  🤖 [fallback] Rui, Hmm, não consegui entender bem. Posso te ajudar com: produção, tecidos, personalização, qualidade, sustentabilidade, cuidados, prazos e catálogo. Sobre qual desses você quer saber? Se for outro assunto (preço, entrega, devolução), me avisa que encaminho para o setor certo.
+  🧑 quero saber dos prazos
+  🤖 [previsao_prazo] Rui, Sobre prazos da produção, qual sua dúvida?
+  1. Prazo padrão
+  2. Com personalização
+  3. Pedido urgente
+  4. Pedido grande (500+)
+  5. Atraso de pedido
+
+========================================================================
+CONVERSA 50 — Troca abrupta de assunto
+========================================================================
+  🧑 oi
+  🤖 [captura_nome] Olá! Eu sou o assistente do setor de produção da Fashion Flow. Antes de começar, como posso te chamar?
+  🧑 Dora
+  🤖 [captura_nome] Prazer, Dora! Sou o assistente do setor de produção da Fashion Flow. Em que posso te ajudar?
+  🧑 quais tecidos pra camiseta
+  🤖 [combinado_tecidos_disponiveis_para_produto] Dora, Para camiseta basica, os tecidos recomendados são: algodao basico, algodao penteado, malha mista, dry fit, rPET reciclado, bambu.
+  🧑 quero cancelar o pedido FF-2026-0009
+  🤖 [cancelar_pedido] Dora, Não encontrei o pedido FF-2026-0009. Confere o número?
+  🧑 e a cor branca, tem?
+  🤖 [saudacao] Dora, Olá! Eu sou o assistente do setor de produção da Fashion Flow. Posso te ajudar com dúvidas sobre processos, tecidos, personalização, qualidade, sustentabilidade, cuidados com a peça e prazos. Sobre o que você quer saber?

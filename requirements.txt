@@ -1,14 +1,11 @@
 # core do bot (loader, extractor, classifier, responder)
-pandas>=3.0.0
+pandas>=2.0.0
 rapidfuzz>=3.0.0
 
 # API REST (app.py) — usada pelo index.html e pra deploy
 fastapi>=0.100
 uvicorn[standard]>=0.27
 pydantic>=2.0
-
-# interface web alternativa (front_gradio.py)
-gradio>=6.0
 
 # geração da documentação em docs/ (opcional)
 python-docx>=1.0

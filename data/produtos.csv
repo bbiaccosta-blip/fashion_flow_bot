@@ -1,0 +1,21 @@
+produto,nome,categoria,descricao,ativo
+camiseta_basica,Camiseta Básica,Camisetas,"100% algodão, gola careca/V/polo, 140 a 220g",sim
+camiseta_premium,Camiseta Premium,Camisetas,"Algodão pima penteado — toque mais macio, fio mais fino e maior durabilidade que a básica",sim
+polo,Polo,Camisetas,"Gola polo em piquet ou malha, com ou sem bolso",sim
+baby_look,Baby Look,Camisetas,Modelagem feminina ajustada,sim
+regata,Regata,Camisetas,"Sem mangas, cavas variadas",sim
+oversized,Oversized,Camisetas,Modelagem ampla e ombro caído,sim
+moletom,Moletom,Moletons,"Flanelado (inverno) ou peluciado (meia estação), com ou sem capuz, 280 a 380g",sim
+jaqueta,Jaqueta,Moletons,"Jaqueta moletom com zíper, corta-vento ou puffer",sim
+calca_jeans,Calça Jeans,Calças,Jeans em várias gramaturas,sim
+calca_alfaiataria,Calça Alfaiataria,Calças,"Tecido de alfaiataria, caimento formal",sim
+legging,Legging,Calças,"Suplex, para esporte e dia a dia",sim
+bermuda,Bermuda,Calças,Sarja ou moletom,sim
+jogger,Jogger,Calças,"Punho no tornozelo, conforto esportivo",sim
+vestido_camisa,Vestido Camisa,Vestidos,Modelo camisa; também midi e longo sob demanda,sim
+uniforme_polo,Uniforme Polo,Uniformes,Polo corporativa com bordado de logo,sim
+uniforme_jaleco,Uniforme Jaleco,Uniformes,"Jaleco profissional (saúde, laboratório)",sim
+uniforme_avental,Uniforme Avental,Uniformes,Avental para cozinha e serviços,sim
+infantil_camiseta,Camiseta Infantil,Infantil,"Linha kids, grade infantil",sim
+infantil_moletom,Moletom Infantil,Infantil,"Linha kids, grade infantil",sim
+infantil_conjunto,Conjunto Infantil,Infantil,Conjunto kids (parte de cima + baixo),sim

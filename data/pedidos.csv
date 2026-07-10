@@ -1,0 +1,6 @@
+numero_pedido,item,data_criacao,cliente,produto,quantidade,cor,tamanho,tecido,personalizacao,etapa_atual,status,data_prevista,observacao
+FF-2026-0001,1,2026-06-01,Maria Silva,camiseta_basica,150,preto,M,algodao_pima,bordado,corte,em_producao,2026-07-06,uniforme PJ
+FF-2026-0002,1,2026-06-10,Joao Souza,moletom,80,marinho,G,moletom_flanelado,silkscreen,modelagem,em_producao,2026-07-15,ainda em modelagem
+FF-2026-0003,1,2026-05-28,Ana Costa,polo,200,branco,GG,algodao_penteado,bordado,costura,em_producao,2026-07-02,uniforme corporativo
+FF-2026-0004,1,2026-06-05,Carlos Lima,vestido_midi,30,vinho,P,viscose,nenhuma,qualidade,em_producao,2026-06-22,sem personalizacao
+FF-2026-0005,1,2026-05-20,Beatriz Rocha,legging,120,preto,M,suplex,dtf,embalagem_expedicao,concluido,2026-06-12,pronto para envio

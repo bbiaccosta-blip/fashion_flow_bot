@@ -12,7 +12,10 @@ from pydantic import BaseModel
 from bot.loader import carregar_dados
 from bot.extractor import extrair_slots
 from bot.classifier import classificar
+from bot.politica import limpar_menu_se_mudou_assunto
 from bot.responder import responder
+from bot.seguranca import verificar_seguranca
+from bot.cliente import tratar_nome, personalizar
 from bot.contexto import (
     criar_sessao, resetar_sessao,
     is_despedida, is_casual,
@@ -52,19 +55,33 @@ def chat(req: MensagemRequest):
 
     if not mensagem:
         return {"resposta": ""}
+    
+    # Filtro de Segurança: bloqueia dados sensíveis antes de tudo
+    bloqueio = verificar_seguranca(mensagem)
+    if bloqueio:
+        return {"resposta": bloqueio, "intencao": "bloqueio_seguranca"}
+
+    # Personalização: no início da conversa, pergunta e guarda o nome do cliente.
+    resposta_nome = tratar_nome(mensagem, sessao)
+    if resposta_nome is not None:
+        return {"resposta": resposta_nome, "intencao": "captura_nome"}
 
     if is_despedida(mensagem):
         sessoes[sessao_id] = resetar_sessao(sessao)
         return {"resposta": "Até logo! Se precisar, é só voltar."}
 
-    if is_casual(mensagem) and sessao["ativa"]:
+    # "sim/ok" curto vira "pode continuar" — MAS não quando estamos perguntando
+    # "quer mais um produto?" (aí "sim" tem que iniciar o próximo item).
+    if is_casual(mensagem) and sessao["ativa"] and not sessao.get("aguardando_mais_produto"):
         return {"resposta": "Beleza, pode continuar!"}
 
+    limpar_menu_se_mudou_assunto(mensagem, sessao)
     em_menu = bool(sessao.get("aguardando_opcao"))
     slots_turno = extrair_slots(mensagem, em_menu=em_menu)
-    slots_efetivos = merge_com_contexto(slots_turno, sessao)
+    slots_efetivos = merge_com_contexto(slots_turno, sessao, mensagem)
     intencao = classificar(mensagem, slots_turno, slots_efetivos, dados["intencoes"], sessao)
     resposta = responder(intencao, slots_efetivos, dados, sessao, mensagem)
+    resposta = personalizar(resposta, sessao)
     atualizar_sessao_pos_turno(sessao, mensagem, slots_efetivos, intencao, resposta)
 
     return {"resposta": resposta, "intencao": intencao}
@@ -77,9 +94,14 @@ def get_sessao(sessao_id: str):
         return {"erro": "sessão não encontrada"}
     s = sessoes[sessao_id]
     return {
+        "estado_conversa": s.get("estado_conversa"),
+        "objetivo_usuario": s.get("objetivo_usuario"),
         "foco_atual": s["foco_atual"],
         "ultimo_assunto": s["ultimo_assunto"],
         "aguardando_opcao": s["aguardando_opcao"],
+        "intencao_escolhida": s.get("intencao_escolhida"),
+        "confianca": s.get("confianca"),
+        "intencao_candidatas": s.get("intencao_candidatas", []),
         "qtd_turnos": len(s["historico_turnos"]),
         "historico": s["historico_turnos"],
     }

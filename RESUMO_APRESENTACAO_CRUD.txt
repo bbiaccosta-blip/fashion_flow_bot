@@ -1,0 +1,310 @@
+================================================================================
+  FASHION FLOW BOT — CRUD DE PEDIDOS
+  Resumo para apresentação (Semana 3: "A Memória do Bot")
+  Bia Costa
+================================================================================
+
+Este arquivo tem DUAS partes:
+  PARTE 1 — Roteiro curto, pra falar na hora da apresentação.
+  PARTE 2 — Resumo aprofundado, pra estudar e responder perguntas difíceis.
+
+
+################################################################################
+#  PARTE 1 — ROTEIRO DE APRESENTAÇÃO (curto)                                    #
+################################################################################
+
+--------------------------------------------------------------------------------
+PITCH (o que é) — 30 segundos
+--------------------------------------------------------------------------------
+Implementamos o CRUD de pedidos no bot do setor de PRODUÇÃO. As 4 operações
+acontecem AO LONGO DA CONVERSA — o cliente fala naturalmente e cada requisição
+ALTERA O pedidos.csv DE VERDADE (persistência real). Seguimos o pseudocódigo da
+Semana 3, com UM ARQUIVO PYTHON POR OPERAÇÃO pra ficar fácil de explicar.
+
+--------------------------------------------------------------------------------
+ESTRUTURA (mostrar a pasta bot/pedidos/)
+--------------------------------------------------------------------------------
+  persistencia.py  -> o único que lê/grava o CSV (é onde mora o BUSCAR e o SALVAR)
+  criar.py     = C (CREATE)
+  consultar.py = R (READ)
+  atualizar.py = U (UPDATE)
+  cancelar.py  = D (DELETE)
+
+  Duas tabelas:
+    lookup_etapas.csv  -> referência (as 6 etapas + se pode alterar)
+    pedidos.csv        -> dados reais (os pedidos)
+
+--------------------------------------------------------------------------------
+AS 4 OPERAÇÕES (1 frase + o pseudocódigo do professor)
+--------------------------------------------------------------------------------
+  CREATE  -> Coleta os dados na conversa -> GERAR_ID() -> INSERIR linha -> SALVAR.
+            (nosso ID é sequencial: FF-2026-0001)
+  READ    -> BUSCAR ONDE id = X -> SE não achou: erro "não encontrei" (o 404)
+            / SENÃO: mostra a etapa atual.
+  UPDATE  -> A operação-assinatura da Produção: AVANÇAR A ETAPA DE FABRICAÇÃO
+            (modelagem -> corte -> costura -> ...). BUSCAR -> muda etapa -> SALVAR.
+  DELETE  -> SOFT DELETE: status="cancelado" (não apaga a linha, preserva histórico).
+
+--------------------------------------------------------------------------------
+DECISÕES QUE VALEM DESTACAR (os pontos "espertos")
+--------------------------------------------------------------------------------
+  - Status do pedido = etapa de fabricação -> coerente com "somos só Produção";
+    entrega fica com a logística.
+  - Soft delete em vez de apagar -> histórico preservado.
+  - Alteração só na modelagem (regra pode_alterar) -> espelha a fábrica real.
+  - Um arquivo por operação + persistência única -> padrão "repositório".
+
+--------------------------------------------------------------------------------
+DEMONSTRAÇÃO AO VIVO
+--------------------------------------------------------------------------------
+  python demo_crud.py
+  -> Roda uma conversa com os 4 CRUDs e mostra o pedidos.csv ANTES e DEPOIS
+     (prova que o arquivo muda). A missão "avançar uma etapa de costura" está
+     pronta: "avançar a etapa do pedido FF-2026-0003".
+
+  Ou conversar de verdade:  python main.py
+
+--------------------------------------------------------------------------------
+SE O PROFESSOR PERGUNTAR...
+--------------------------------------------------------------------------------
+  "Como o usuário ativa o CRUD?"
+     -> Linguagem natural; o classifier.py reconhece a intenção pela frase (sem botão).
+  "E se o ID não existir?"
+     -> Tratamos o erro 404: "não encontrei o pedido, confere o número?".
+  "A alteração é real mesmo?"
+     -> Sim, toda operação termina em SALVAR TABELA (persistencia.salvar) — dá pra
+        abrir o pedidos.csv e ver.
+  "Onde está a 'memória' (tema da Semana 3)?"
+     -> Na sessão (contexto.py): registro_pedido, aguardando_id... é a memória do
+        bot aplicada ao CRUD multi-turno.
+  "Por que pedidos.csv e não ordens_producao.csv?"
+     -> Mesmo conceito; mantivemos pedidos.csv porque o slot/intent e o formato
+        FF-AAAA-NNNN já existiam no projeto.
+
+
+################################################################################
+#  PARTE 2 — RESUMO APROFUNDADO (pra estudar)                                   #
+################################################################################
+
+--------------------------------------------------------------------------------
+1. CONTEXTO E OBJETIVO
+--------------------------------------------------------------------------------
+O Fashion Flow Bot é um chatbot acadêmico do setor de PRODUÇÃO de uma confecção
+fictícia. Ele responde por intenção, usando CSVs como base de conhecimento (sem
+IA externa). O tema da Semana 3 é "A Memória do Bot": fazer o bot lembrar do
+contexto da conversa. Em cima disso, a entrega do CRUD pede que o bot manipule
+PEDIDOS de verdade ao longo da conversa, gravando no arquivo.
+
+Restrição central de design: somos APENAS o bot do setor de produção. Isso
+decide o que o bot pode responder (a fabricação) e o que ele encaminha pra outro
+setor (entrega -> logística; preço/fechamento/cancelamento contratual -> vendas).
+
+--------------------------------------------------------------------------------
+2. A DESCOBERTA QUE GUIOU O DESIGN
+--------------------------------------------------------------------------------
+Ao abrir o projeto, o arquivo "lookup_pedidos.csv" NÃO era uma tabela de pedidos
+— era uma tabela de ETAPAS (colunas: etapa, pode_alterar, descricao, observacao;
+6 linhas, nenhum pedido real, nenhum ID). As intenções de pedido só liam essas
+etapas e respondiam genérico ("fale com a logística").
+
+Decisão: separar em DUAS tabelas (padrão clássico "referência + dados"):
+  - lookup_pedidos.csv  ->  RENOMEADO para lookup_etapas.csv (tabela de referência)
+  - pedidos.csv         ->  NOVO, a tabela de pedidos reais
+
+Isso também resolveu uma contradição: o bot antigo "se recusava" a dar status
+(mandava pra logística). Reconciliamos definindo que o status que a Produção dá
+é a ETAPA DE FABRICAÇÃO (domínio nosso). Status de ENTREGA continua com a
+logística — e o bot avisa isso na resposta.
+
+--------------------------------------------------------------------------------
+3. ARQUITETURA: AS DUAS TABELAS + O PACOTE bot/pedidos/
+--------------------------------------------------------------------------------
+  data/lookup_etapas.csv  (referência / "dimensão")
+  data/pedidos.csv        (dados / "fato"; aponta para uma etapa via etapa_atual)
+
+  bot/pedidos/
+    __init__.py
+    persistencia.py   -> ÚNICO que lê/grava o pedidos.csv (padrão "repositório")
+    criar.py          -> CREATE  registrar_pedido()
+    consultar.py      -> READ    consultar_pedido()
+    atualizar.py      -> UPDATE  alterar_campo() + avancar_etapa()
+    cancelar.py       -> DELETE  cancelar_pedido()  (soft delete)
+
+Por que padrão repositório: se um dia trocarmos o CSV por um banco de dados, só
+o persistencia.py muda — os 4 CRUDs continuam iguais. Cada CRUD cuida SÓ da regra
+de negócio; quem mexe no arquivo é o persistencia.
+
+--------------------------------------------------------------------------------
+4. O MODELO DE DADOS
+--------------------------------------------------------------------------------
+pedidos.csv (12 colunas):
+  numero_pedido   -> ID (chave), formato FF-AAAA-NNNN  (ex: FF-2026-0001)
+  data_criacao    -> data em que o pedido foi registrado
+  produto         -> ex: camiseta_basica, polo, moletom
+  quantidade      -> nº de peças
+  cor             -> ex: preto, branco, marinho
+  tamanho         -> ex: M, G, GG, infantil, plus size
+  tecido          -> ex: algodao_pima, moletom_flanelado, viscose
+  personalizacao  -> bordado, silk, dtf ou "nenhuma"
+  etapa_atual     -> a ETAPA de fabricação (FK -> lookup_etapas.etapa) = o status fino
+  status          -> ciclo macro: em_producao / concluido / cancelado / pausado
+  data_prevista   -> previsão de término na produção
+  observacao      -> texto livre (ex: motivo de cancelamento)
+
+lookup_etapas.csv (referência):
+  etapa, pode_alterar, descricao, observacao
+  As 6 etapas, EM ORDEM:
+    modelagem (pode_alterar=sim) -> corte -> costura -> personalizacao ->
+    qualidade -> embalagem_expedicao
+  Só a "modelagem" tem pode_alterar=sim. É a regra de negócio que controla o UPDATE.
+
+--------------------------------------------------------------------------------
+5. O PIPELINE DA CONVERSA (como uma mensagem vira CRUD)
+--------------------------------------------------------------------------------
+Cada turno (em main.py / app.py):
+
+  mensagem do usuário
+    -> extrair_slots()       (extractor.py)  acha numero_pedido, produto, cor...
+    -> merge_com_contexto()  (contexto.py)   junta com a memória da conversa
+    -> classificar()         (classifier.py) decide a intenção (qual CRUD)
+    -> responder()           (responder.py)  executa: chama bot/pedidos/*
+          -> bot/pedidos/<op>.py             a regra de negócio
+                -> persistencia.py           lê / grava o pedidos.csv
+    -> atualizar_sessao_pos_turno()          guarda o que aconteceu
+
+Dois "ganchos" no classifier fazem o CRUD fluir em vários turnos:
+  - Se há um registro em andamento (sessao["registro_pedido"]), toda mensagem
+    continua sendo "registrar_pedido" (coleta campo por campo).
+  - Se antes pedimos o ID e ele chega agora (sessao["aguardando_id"]), executa a
+    ação pendente (consultar / cancelar / alterar / avançar) sem repetir o verbo.
+
+Ordem das regras no classifier (importa!): cancelar -> alterar -> registrar ->
+avançar -> estoque -> status. Por isso "cancelar" sempre vence, e mandar só o
+número (FF-...) cai em consulta (READ).
+
+--------------------------------------------------------------------------------
+6. CADA OPERAÇÃO EM PROFUNDIDADE
+--------------------------------------------------------------------------------
+
+C — CREATE (criar.py: registrar_pedido)
+  Ativa: "quero fazer um pedido", "registrar pedido", "novo pedido"...
+  É multi-turno (precisa de vários dados). O responder._fluxo_registrar pergunta
+  na ordem: produto -> quantidade -> cor -> tamanho -> tecido -> personalizacao,
+  guardando em sessao["registro_pedido"]. Cada resposta passa pelo extrair_slots;
+  se ele não reconhecer (ex: "100", "M", "nenhuma"), usamos o texto cru.
+  Quando completa, registrar_pedido():
+    1. valida que veio tudo,
+    2. GERA O ID (gerar_id, sequencial por ano),
+    3. monta a linha com etapa_atual="modelagem", status="em_producao",
+       data_prevista = hoje + 20 dias,
+    4. INSERE a linha e SALVA o CSV,
+    5. retorna a confirmação com o número.
+  Para abortar no meio: "cancelar", "sair", "deixa pra lá".
+  Pseudocódigo (Semana 3):
+    RECEBER dados -> novo_id = GERAR_ID() -> INSERIR nova_linha -> RETORNAR ok.
+
+R — READ (consultar.py: consultar_pedido)
+  Ativa: "status do pedido", "consultar/acompanhar pedido", ou só mandar o número.
+  Se faltar o ID, o bot pergunta e marca sessao["aguardando_id"]="status_pedido".
+  consultar_pedido() faz buscar_por_id:
+    - SE não achou -> "Não encontrei o pedido X" (o erro 404 — todo READ precisa
+      de plano B).
+    - SENÃO -> mostra a etapa atual de fabricação e se ainda dá pra alterar.
+      Avisa que o status de entrega é com a logística.
+  Pseudocódigo: BUSCAR ONDE id=X -> SE VAZIO: erro / SENÃO: retorna status.
+
+U — UPDATE 1 (atualizar.py: alterar_campo)
+  Ativa: "mudar/alterar/trocar" + cor/tamanho/quantidade + um pedido.
+  responder._detectar_alteracao descobre o campo e o novo valor; se faltar o ID,
+  guarda em sessao["alteracao_pendente"] e pede o número.
+  alterar_campo() faz buscar_por_id e SÓ altera se _pode_alterar(etapa) for True
+  (lê o lookup_etapas — só "modelagem" permite). Recusa se estiver cancelado.
+  Depois SALVA.
+  Pseudocódigo: UPDATE = READ (buscar) + alterar a coluna + SALVAR TABELA.
+
+U — UPDATE 2 (atualizar.py: avancar_etapa)  <- OPERAÇÃO-ASSINATURA DA PRODUÇÃO
+  Ativa: "avançar etapa", "próxima etapa", "concluir etapa", "terminei a costura".
+  avancar_etapa() acha a posição da etapa atual na ORDEM e move para a próxima.
+  Se já estava na última (embalagem_expedicao), marca status="concluido". Salva.
+  É exatamente a "missão de avançar uma etapa de costura" do material.
+
+D — DELETE (cancelar.py: cancelar_pedido)
+  Ativa: "cancelar" / "cancelamento" (primeira regra de verbo, vence todas).
+  SOFT DELETE: em vez de apagar a linha, marca status="cancelado" (e grava o
+  motivo na observacao). Recusa se já estiver cancelado ou concluído. Salva.
+  Por que: preserva o histórico (mais seguro/auditável). Tecnicamente é um UPDATE
+  de status — é assim que o material define soft delete.
+
+--------------------------------------------------------------------------------
+7. A MEMÓRIA DA CONVERSA (o tema da Semana 3 aplicado ao CRUD)
+--------------------------------------------------------------------------------
+Em contexto.py, a sessão guarda 4 campos que permitem o CRUD multi-turno:
+  registro_pedido          -> dados já coletados no CREATE (ou None)
+  registro_campo_pendente  -> qual campo estamos perguntando agora
+  aguardando_id            -> a ação esperando o ID (status/cancelar/alterar/avancar)
+  alteracao_pendente       -> o {campo, valor} guardado enquanto pedimos o ID
+
+Isso é a "memória do garçom" da Semana 3: o bot lembra do que está no meio de
+fazer, então o cliente pode responder em pedaços e o bot junta tudo.
+
+--------------------------------------------------------------------------------
+8. DECISÕES DE DESIGN E TRADE-OFFS
+--------------------------------------------------------------------------------
+  - Status = etapa de fabricação: mantém o bot dentro do setor de produção.
+  - Soft delete (cancelado) em vez de apagar: histórico preservado; reversível.
+  - Alteração travada por etapa (pode_alterar): só na modelagem — espelha que,
+    depois do corte, mudar gera retrabalho e custo.
+  - ID sequencial (FF-AAAA-NNNN) em vez de aleatório: também é único, mas fica
+    legível e ordenado (o material usa GERAR_ID_ALEATORIO; ambos garantem unicidade).
+  - Um arquivo por operação + persistência única: clareza > DRY (projeto didático).
+  - Persistência sempre lê/grava do disco na hora: garante o "de forma real" e
+    evita estado em memória desatualizado.
+
+--------------------------------------------------------------------------------
+9. COERÊNCIA COM O SETOR DE PRODUÇÃO (as fronteiras)
+--------------------------------------------------------------------------------
+  Produção (nós) responde: criar pedido, consultar etapa de fabricação, alterar
+  (na modelagem), avançar etapa, cancelar.
+  Encaminhamos para outro setor:
+    - entrega / frete / rastreamento -> logística
+    - preço / pagamento / fechamento -> vendas
+    - devolução / defeito da peça     -> devoluções
+
+--------------------------------------------------------------------------------
+10. COMO TESTAR / VALIDAR
+--------------------------------------------------------------------------------
+  python demo_crud.py
+    -> Reseta o pedidos.csv pra um estado conhecido, roda uma conversa exercitando
+       C/R/U/D + avançar etapa, e imprime o CSV ANTES e DEPOIS. Repetível.
+  python main.py        -> conversa pelo terminal
+  python -m uvicorn app:app --reload  -> interface web (http://localhost:8000)
+  Também rodamos um smoke test confirmando que preço, prazo, herança de contexto,
+  menus e estoque continuam funcionando (sem regressão).
+
+--------------------------------------------------------------------------------
+11. LIMITAÇÕES E PRÓXIMOS PASSOS
+--------------------------------------------------------------------------------
+  - avancar_etapa existe na lógica mas hoje é acionado por qualquer um na conversa;
+    poderia virar um comando de operador (ex: /avancar FF-2026-0001).
+  - data_prevista usa um prazo fixo (20 dias); dá pra puxar do lookup_prazo.csv.
+  - A coleta do CREATE usa parsing simples; dá pra deixar a interpretação das
+    respostas mais robusta.
+  - Um menu "Pedidos" (1. Registrar / 2. Consultar / ...) poderia ser um atalho
+    mais explícito além da linguagem natural.
+
+--------------------------------------------------------------------------------
+12. MAPEAMENTO COM O MATERIAL DO PROFESSOR (Semana 3)
+--------------------------------------------------------------------------------
+  Pseudocódigo geral seguido em cada arquivo de bot/pedidos/:
+    RECEBER ... -> BUSCAR NA TABELA ONDE ... -> SE/SENÃO (trata o 404) ->
+    SALVAR TABELA (obrigatório depois de todo UPDATE) -> RETORNAR mensagem.
+  Operação-assinatura da Produção: o UPDATE "avançar a etapa de fabricação"
+    (a missão de quarta, "avançar uma etapa de costura", está implementada).
+  Diferenças conscientes em relação ao material:
+    - ID: nós sequencial; material GERAR_ID_ALEATORIO (ambos únicos).
+    - Tabela: nós pedidos.csv; material ordens_producao.csv (mesmo conceito).
+
+================================================================================
+  Fim. Arquivos relacionados: GUIA_CRUD_PEDIDOS.md (referência de código),
+  demo_crud.py (demonstração), docs/proposta_crud_pedidos.docx (proposta inicial).
+================================================================================

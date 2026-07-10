@@ -432,6 +432,13 @@
   const apiEl   = document.getElementById("api-url");
   const welcome = document.getElementById("welcome");
 
+  // Se a página é servida por um servidor (uvicorn local OU deploy), a API é a
+  // PRÓPRIA origem — assim funciona no deploy sem precisar editar nada.
+  // (Se aberta como arquivo file://, mantém o http://localhost:8000 padrão.)
+  if (location.protocol === "http:" || location.protocol === "https:") {
+    apiEl.value = location.origin;
+  }
+
   // Enter envia, Shift+Enter quebra linha
   input.addEventListener("keydown", e => {
     if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(); }
